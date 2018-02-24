@@ -1,0 +1,35 @@
+{
+	"manifest_version": 2,
+	"name": "Ask Before Download (Prevent Auto Download)",
+	"description": "This extension Prompt the user to confirm before download.\nOnly Useful on Firefox Android, since it will slient accept download.",
+	"version": "1",
+	"developer": {
+		"name": "StrongOp",
+		"url": "https://github.com/strongopx/"
+	},
+	"permissions": [
+		"<all_urls>",
+		"tabs",
+		"activeTab",
+		"webRequest",
+		"webRequestBlocking"
+	],
+	"icons": {
+		"48": "icons/icon-48.png",
+		"96": "icons/icon-96.png"
+	},
+	"background": {
+		"scripts": [
+			"ask-before-download.js"
+		]
+	},
+	"web_accessible_resources": [
+		"popup/user-action-page.html"
+	],
+	"applications": {
+		"gecko": {
+			"id": "ask-before-download.strongopx@github.com",
+			"strict_min_version": "57.0"
+		}
+	}
+}

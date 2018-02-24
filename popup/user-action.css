@@ -1,0 +1,88 @@
+:root, html, body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 100%;
+}
+
+.hidden {
+    display: none;
+}
+.vspace-half {
+    margin-top: 0.5rem;
+}
+.vspace-1 {
+    margin-top: 1rem;
+}
+.vspace-2 {
+    margin-top: 2rem;
+}
+.green-text {
+    color: green;
+}
+.red-text {
+    color: red;
+}
+.button {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    margin: 0.1rem;
+    font-size: large;
+    border: 1px solid black;
+    background-color: lightgray;
+    cursor: default;
+}
+.button:hover {
+    border: 1px solid teal;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+input[type="button"] {
+    font-size: large;
+}
+.desc-type {
+    font-weight: bold;
+    background-color: gray;
+    color: white;
+    padding: 0.1rem 0.3rem;
+    margin: 0.1rem auto;
+}
+.name {
+    color: teal;
+}
+.name-caution {
+    color: darkred;
+}
+.uri {
+    color: gray;
+}
+#user-notice {
+    border: 1px solid teal;
+    max-width: 40rem;
+    min-height: 10rem;
+    margin: auto;
+    padding: 1rem;
+    word-break: break-all;
+}
+#user-confirm {
+    border: 1px solid teal;
+    max-width: 40rem;
+    min-height: 10rem;
+    margin: auto;
+    padding: 1rem;
+    word-break: break-all;
+}
+#user-choice {
+    text-align: right;
+}
+#tab-name, #tab-uri, #host-name {
+    margin-left: 1rem;
+}
+#file-name, #file-uri {
+    margin-left: 1rem;
+}
+#btn-allow {
+    padding: 0.5rem;
+}
+#btn-reject {
+    padding: 1rem 2rem;
+    margin-left: 2rem;
+}
