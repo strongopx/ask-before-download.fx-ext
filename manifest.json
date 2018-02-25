@@ -5,14 +5,15 @@
 	"version": "1",
 	"developer": {
 		"name": "StrongOp",
-		"url": "https://github.com/strongopx/fx-ext-ask-before-download"
+		"url": "https://github.com/strongopx/ask-before-download.fx-ext"
 	},
 	"permissions": [
 		"<all_urls>",
 		"tabs",
 		"activeTab",
 		"webRequest",
-		"webRequestBlocking"
+		"webRequestBlocking",
+		"storage"
 	],
 	"icons": {
 		"48": "icons/icon-48.png",
@@ -20,15 +21,19 @@
 	},
 	"background": {
 		"scripts": [
-			"ask-before-download.js"
+			"background/util.js",
+			"background/blacklist.js",
+			"background/whitelist.js",
+			"background/ask-before-download.js"
 		]
 	},
 	"web_accessible_resources": [
+		"popup/on-install.html",
 		"popup/user-action-page.html"
 	],
 	"applications": {
 		"gecko": {
-			"id": "ask-before-download.strongopx@github.com",
+			"id": "ask-before-download.fx-ext.strongopx@github.com",
 			"strict_min_version": "57.0"
 		}
 	}

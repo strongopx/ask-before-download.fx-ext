@@ -2,7 +2,9 @@
     font-family: "Open Sans", sans-serif;
     font-size: 100%;
 }
-
+input {
+    vertical-align: middle;
+}
 .hidden {
     display: none;
 }
@@ -71,12 +73,15 @@ input[type="button"] {
     word-break: break-all;
 }
 #user-choice {
-    text-align: right;
+    text-align: center;
 }
-#tab-name, #tab-uri, #host-name {
+#remember-choice-div {
     margin-left: 1rem;
 }
-#file-name, #file-uri {
+#tab-name, #tab-uri {
+    margin-left: 1rem;
+}
+#file-name, #file-uri, #file-size {
     margin-left: 1rem;
 }
 #btn-allow {
