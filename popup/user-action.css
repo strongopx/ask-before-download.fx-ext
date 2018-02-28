@@ -78,6 +78,9 @@ input[type="button"] {
 #remember-choice-div {
     margin-left: 1rem;
 }
+#remember-choice-div table tr td:first-child {
+    text-align: right;
+}
 #tab-name, #tab-uri {
     margin-left: 1rem;
 }

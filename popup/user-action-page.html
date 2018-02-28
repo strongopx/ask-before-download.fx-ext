@@ -24,16 +24,27 @@
         <div class="vspace-1"></div>
         <label><input type=checkbox id="remember-choice">Remember my action for:<br /></label>
         <form id="remember-choice-div" class="hidden">
-            <div id="host-name-div">Site:
-                <label><input type="radio" id="host-name-radio" name="host-name" checked><span id="host-name"></span></label>
-                <label><input type="radio" id="root-host-name-radio" name="host-name"><span id="root-host-name"></span></label>
-            </div>
-            <div id="mime-type-div">Mime Type:
-                <label><input type="checkbox" id="mime-type-check" name="mime-type" checked><span id="mime-type"></span></label>
-            </div>
-            <div id="file-ext-div">File Extension:
-                <label><input type="checkbox" id="file-ext-check" name="file-ext" checked><span id="file-ext"></span></label>
-            </div>
+            <table>
+                <tr>
+                    <td id="host-name-div">Site:</td>
+                    <td>
+                        <label><input type="radio" id="host-name-radio" name="host-name" checked><span id="host-name"></span></label>
+                        <label><input type="radio" id="root-host-name-radio" name="host-name"><span id="root-host-name"></span></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="mime-type-div">Mime Type:</td>
+                    <td>
+                        <label><input type="checkbox" id="mime-type-check" name="mime-type" checked><span id="mime-type"></span></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="file-ext-div">File Extension:</td>
+                    <td>
+                        <label><input type="checkbox" id="file-ext-check" name="file-ext" checked><span id="file-ext"></span></label>
+                    </td>
+                </tr>
+            </table>
         </form>
         <div id="user-choice" class="vspace-1">
             <input type="button" id="btn-allow" class="red-text" value="Allow Anyway" />

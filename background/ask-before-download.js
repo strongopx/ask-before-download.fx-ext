@@ -81,6 +81,8 @@ storage.get("userMemList").then((item) => {
 }, onError);
 
 function handleRememberChoice(mem) {
+    if (!mem["host-name"] || !mem["action"])
+        return
     let r0 = {};
     let hostname = mem["host-name"];
     r0["action"] = mem["action"];
@@ -108,7 +110,7 @@ function rootHostName(host) {
 }
 
 function checkUserMemList(list, request, type) {
-    let originUrl = new URL(request.originUrl);
+    let originUrl = new URL(request.originUrl || request.url);
     let hostname = originUrl.hostname;
     let rootHostname = rootHostName(hostname);
     let rs = [];
@@ -228,13 +230,16 @@ function filterRequest(request) {
     let url = request.url;
     let contentType = respHdr.contentType;
 
-    /*
     log("url ", url);
     log("request ", request);
     log("contentType ", contentType);
     log("userMemList ", userMemList);
+    /*
     */
-    let r0 = checkUserMemList(userMemList, request, contentType);
+    let r0;
+    try {
+        r0 = checkUserMemList(userMemList, request, contentType);
+    } catch (e) { }
     if (typeof r0 === "object") {
         return r0;
     }
@@ -258,7 +263,7 @@ function filterRequest(request) {
                     fileName: respHdr.fileName,
                     fileSize: respHdr.contentLength,
                     mimeType: contentType,
-                    originUrl: request.originUrl,
+                    originUrl: request.originUrl || request.url,
                     tabName: "No Tab Name",
                 };
                 //notifyUserConfirm(msg, null, resolve);
@@ -266,6 +271,7 @@ function filterRequest(request) {
                     msg.tabName = tab.title;
                     msg.tabId = tab.id;
                     msg.tabIndex = tab.index;
+                    
                     popupUserActionPage(request, msg, resolve);
                 });
 

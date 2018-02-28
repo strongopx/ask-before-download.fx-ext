@@ -71,7 +71,8 @@ function handleMessage(request, sender, sendResponse) {
     if (request.action === "download") {
         let file_name;
         [, file_name,] = splitURL(request.url);
-        let originUrl = new URL(request.originUrl);
+        let originUrl = new URL(request.originUrl || request.url);
+
         doc.querySelector("#tab-name").textContent = request.tabName;
         doc.querySelector("#tab-uri").textContent = request.originUrl;
         doc.querySelector("#file-name").textContent = decodeURIComponent(request.fileName || file_name);
