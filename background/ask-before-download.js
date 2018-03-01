@@ -91,6 +91,7 @@ function handleRememberChoice(mem) {
     r0["mime-type"] = mem["mime-type"];
     if (mem["file-ext"])
         r0["file-ext"] = new RegExp("\\."+mem["file-ext"]+"\\b");
+    //log("typeof file-ext", typeof mem["file-ext"]);
 
     if (!userMemList[hostname])
         userMemList[hostname] = [];
@@ -112,7 +113,7 @@ function rootHostName(host) {
 function checkUserMemList(list, request, type) {
     let originUrl = new URL(request.originUrl || request.url);
     let hostname = originUrl.hostname;
-    let rootHostname = rootHostName(hostname);
+    let rootHostname = "*." + rootHostName(hostname);
     let rs = [];
     rs = rs.concat(list[hostname]);
     if (hostname !== rootHostname)

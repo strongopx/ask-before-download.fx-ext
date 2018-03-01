@@ -62,7 +62,7 @@ function rootHostName(host) {
 function getFileExt(name) {
     let i = name.lastIndexOf('.');
     if (i < 0)
-        return;
+        return "";
     return name.substring(i+1);
 }
 
@@ -79,26 +79,26 @@ function handleMessage(request, sender, sendResponse) {
         doc.querySelector("#file-uri").textContent = request.url;
         doc.querySelector("#file-size").textContent = humanReadableSize(request.fileSize);
 
-        const wildPrefix = "*.";
-        let rootHost = rootHostName(originUrl.hostname);
         doc.querySelector("#host-name").textContent = originUrl.hostname;
         doc.querySelector("#host-name-radio").value = originUrl.hostname;
-        if (originUrl.hostname !== rootHost) {
-            doc.querySelector("#root-host-name").textContent = wildPrefix + rootHost;
-            doc.querySelector("#root-host-name-radio").value = rootHost;
+        let rootHost = "*." + rootHostName(originUrl.hostname);
+        doc.querySelector("#root-host-name").textContent = rootHost;
+        doc.querySelector("#root-host-name-radio").value = rootHost;
+
+        if (request.mimeType) {
+            doc.querySelector("#mime-type").textContent = request.mimeType;
+            doc.querySelector("#mime-type-check").value = request.mimeType;
         } else {
-            doc.querySelector("#root-host-name").style.display = "none";
-            doc.querySelector("#root-host-name-radio").style.display = "none";
+            doc.querySelector("#mime-type-div").style.display =  "none";
         }
 
-        doc.querySelector("#mime-type-div").style.display = request.mimeType ? "block" : "none";
-        doc.querySelector("#mime-type").textContent = request.mimeType;
-        doc.querySelector("#mime-type-check").value = request.mimeType;
-
         let ext = getFileExt(request.fileName || file_name);
-        doc.querySelector("#file-ext-div").style.display = ext ? "block" : "none";
-        doc.querySelector("#file-ext").textContent = ext;
-        doc.querySelector("#file-ext-check").value = ext;
+        if (ext) {
+            doc.querySelector("#file-ext").textContent = ext;
+            doc.querySelector("#file-ext-check").value = ext;
+        } else {
+            doc.querySelector("#file-ext-div").style.display = "none";
+        }
     }
     if (gSendResponse)
         log("*** Last confirm not made by user.");
