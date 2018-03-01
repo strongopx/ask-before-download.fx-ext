@@ -79,13 +79,22 @@ function handleMessage(request, sender, sendResponse) {
         doc.querySelector("#file-uri").textContent = request.url;
         doc.querySelector("#file-size").textContent = humanReadableSize(request.fileSize);
 
+        const wildPrefix = "*.";
+        let rootHost = rootHostName(originUrl.hostname);
         doc.querySelector("#host-name").textContent = originUrl.hostname;
         doc.querySelector("#host-name-radio").value = originUrl.hostname;
-        doc.querySelector("#root-host-name").textContent = rootHostName(originUrl.hostname);
-        doc.querySelector("#root-host-name-radio").value = rootHostName(originUrl.hostname);
+        if (originUrl.hostname !== rootHost) {
+            doc.querySelector("#root-host-name").textContent = wildPrefix + rootHost;
+            doc.querySelector("#root-host-name-radio").value = rootHost;
+        } else {
+            doc.querySelector("#root-host-name").style.display = "none";
+            doc.querySelector("#root-host-name-radio").style.display = "none";
+        }
+
         doc.querySelector("#mime-type-div").style.display = request.mimeType ? "block" : "none";
         doc.querySelector("#mime-type").textContent = request.mimeType;
         doc.querySelector("#mime-type-check").value = request.mimeType;
+
         let ext = getFileExt(request.fileName || file_name);
         doc.querySelector("#file-ext-div").style.display = ext ? "block" : "none";
         doc.querySelector("#file-ext").textContent = ext;
@@ -117,16 +126,18 @@ function handleRememberChoice(e) {
 }
 
 function handleUserAction(e) {
+    let userChoiceMade = e.type !== "beforeunload";
+
     if (gSendResponse) {
-        let resp = {};
+        let response = {};
         let reject;
         try {
             reject = e.target.id !== "btn-allow";
         } catch (ex) {
             reject = true;
         }
-        resp.cancel = reject;
-        if (doc.querySelector("#remember-choice").checked) {
+        response.cancel = reject;
+        if (userChoiceMade && doc.querySelector("#remember-choice").checked) {
             let remember = { action: reject ? "reject" : "allow" };
             let form = document.querySelector("form#remember-choice-div");
             var data = new FormData(form);
@@ -135,15 +146,17 @@ function handleUserAction(e) {
                     remember[entry[0]] = entry[1];
             }
             log("remember ", remember);
-            resp.remember = remember;
+            response.remember = remember;
         }
-        log("Send user action response ", resp);
-        gSendResponse(resp);
+        log("Send user action response ", response);
+        gSendResponse(response);
     } else {
-        log("Not sending user action resp, gSendResponse is ", gSendResponse);
+        log("Not sending user action response, gSendResponse is ", gSendResponse);
     }
+
     gSendResponse = null;
-    if (e.type !== "beforeunload") {
+    
+    if (userChoiceMade) {
         browser.tabs.getCurrent().then((tab) => {
             browser.tabs.remove(tab.id);
         });

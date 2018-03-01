@@ -230,11 +230,11 @@ function filterRequest(request) {
     let url = request.url;
     let contentType = respHdr.contentType;
 
+    /*
     log("url ", url);
     log("request ", request);
     log("contentType ", contentType);
     log("userMemList ", userMemList);
-    /*
     */
     let r0;
     try {
@@ -290,12 +290,14 @@ browser.webRequest.onHeadersReceived.addListener(
 );
 
 function handleInstalled(details) {
-    log(details.reason);
-    if (browser.runtime.PlatformOs !== "android") {
-        browser.tabs.create({
-            url: browser.extension.getURL("popup/on-install.html"),
-        });
-    }
+    log("Install reason: ", details.reason);
+    browser.runtime.getPlatformInfo().then((info) => {
+        if (info.os !== browser.runtime.PlatformOs.ANDROID) {
+            browser.tabs.create({
+                url: browser.extension.getURL("popup/on-install.html"),
+            });
+        }
+    });
 }
 
 browser.runtime.onInstalled.addListener(handleInstalled);

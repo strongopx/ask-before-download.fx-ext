@@ -80,6 +80,14 @@ input[type="button"] {
 }
 #remember-choice-div table tr td:first-child {
     text-align: right;
+    word-break: normal;
+    background-color: bisque;
+}
+#remember-choice-div table tr td:last-child {
+    word-break: normal;
+}
+#remember-choice-div table tr td label {
+    display: block;
 }
 #tab-name, #tab-uri {
     margin-left: 1rem;
