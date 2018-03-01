@@ -46,6 +46,7 @@ input[type="button"] {
     color: white;
     padding: 0.1rem 0.3rem;
     margin: 0.1rem auto;
+    border-radius: 0.2rem;
 }
 .name {
     color: teal;
@@ -65,40 +66,51 @@ input[type="button"] {
     word-break: break-all;
 }
 #user-confirm {
+    border-radius: 0.5rem;
     border: 1px solid teal;
     max-width: 40rem;
     min-height: 10rem;
     margin: auto;
-    padding: 1rem;
+    padding: 1.2vw;
     word-break: break-all;
+}
+@media screen and (max-width: 40rem) {
+    #user-confirm {
+        border: unset;
+        margin: 0;
+        padding: 0.5vw;
+    }
 }
 #user-choice {
     text-align: center;
 }
 #remember-choice-div {
-    margin-left: 1rem;
+    margin-left: 2vw;
 }
 #remember-choice-div table tr td:first-child {
     text-align: right;
     word-break: normal;
     background-color: bisque;
+    border-radius: 0.2rem;
 }
 #remember-choice-div table tr td:last-child {
-    word-break: normal;
+    /* word-break: normal; */
 }
 #remember-choice-div table tr td label {
     display: block;
 }
 #tab-name, #tab-uri {
-    margin-left: 1rem;
+    margin-left: 2vw;
 }
 #file-name, #file-uri, #file-size {
-    margin-left: 1rem;
+    margin-left: 2vw;
 }
 #btn-allow {
     padding: 0.5rem;
+    border-radius: 0.2rem;
 }
 #btn-reject {
     padding: 1rem 2rem;
-    margin-left: 2rem;
+    margin-left: 2vw;
+    border-radius: 0.2rem;
 }
