@@ -15,6 +15,7 @@ application/xml                       rdf xml;
 # Normalize to standard type.
 # https://tools.ietf.org/html/rfc4329#section-7.2
 application/javascript                js;
+text/javascript                       txt;
 
 
 # Manifest files
@@ -75,7 +76,7 @@ text/vnd.rim.location.xloc            xloc;
 text/vnd.sun.j2me.app-descriptor      jad;
 text/vnd.wap.wml                      wml;
 text/vtt                              vtt;
-text/x-component htc;
+text/x-component                      htc;
 `;
 
 var userWhiteList = [];
