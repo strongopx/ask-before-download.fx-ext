@@ -6,40 +6,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="user-action.css" />
-    <title>Caution! Download file!</title>
+    <title data-msgid="UAP-title">Caution! Download file!</title>
 </head>
 
 <body>
     <div id="user-confirm">
-        <span class="desc-type">Tab:</span>
+        <span class="desc-type" data-msgid="UAP-tab">Tab:</span>
         <div id="tab-name" class="name"></div>
         <div id="tab-uri" class="uri"></div>
         <div class="vspace-half"></div>
-        <span class="desc-type">Want to download:</span><br />
+        <span class="desc-type" data-msgid="UAP-want-to-download">Want to download:</span><br />
         <div id="file-name" class="name-caution"></div>
         <div id="file-uri" class="uri"></div>
         <div class="vspace-half"></div>
-        <span class="desc-type">Size:</span><br />
+        <span class="desc-type" data-msgid="UAP-size">Size:</span><br />
         <div id="file-size"></div>
         <div class="vspace-1"></div>
-        <label><input type=checkbox id="remember-choice">Remember my action for:<br /></label>
+        <label><input type=checkbox id="remember-choice"><span data-msgid="UAP-remember-action-for">Remember my action for:</span><br /></label>
         <form id="remember-choice-div" class="hidden">
             <table>
                 <tr id="host-name-div">
-                    <td>Web Site:</td>
+                    <td data-msgid="UAP-remember-web-site">Web Site:</td>
                     <td>
                         <label><input type="radio" id="host-name-radio" name="host-name" value="" checked><span id="host-name"></span></label>
                         <label><input type="radio" id="root-host-name-radio" name="host-name" value=""><span id="root-host-name"></span></label>
                     </td>
                 </tr>
                 <tr id="mime-type-div">
-                    <td>Mime Type:</td>
+                    <td data-msgid="UAP-mime-type">Mime Type:</td>
                     <td>
                         <label><input type="checkbox" id="mime-type-check" name="mime-type" value="" checked><span id="mime-type"></span></label>
                     </td>
                 </tr>
                 <tr id="file-ext-div">
-                    <td>File Ext.:</td>
+                    <td data-msgid="UAP-file-ext">File Ext.:</td>
                     <td>
                         <label><input type="checkbox" id="file-ext-check" name="file-ext" value="" checked><span id="file-ext"></span></label>
                     </td>
@@ -47,14 +47,15 @@
             </table>
         </form>
         <div id="user-choice" class="vspace-1">
-            <input type="button" id="btn-allow" class="red-text" value="Allow Anyway" />
-            <input type="button" id="btn-reject" class="green-text" value="Reject" />
+            <input type="button" id="btn-allow" class="red-text" value="Allow Anyway" data-msgid="UAP-btn-allow"/>
+            <input type="button" id="btn-reject" class="green-text" value="Reject" data-msgid="UAP-btn-reject"/>
         </div>
     </div>
     <div id="error-content" class="hidden">
         <p>Can't load the user action page.</p>
         <p>Try a different page.</p>
     </div>
+    <script src="/background/i18n.js"></script>
     <script src="user-action-page.js"></script>
 </body>
 

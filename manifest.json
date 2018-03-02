@@ -1,8 +1,9 @@
 {
 	"manifest_version": 2,
-	"name": "Ask Before Download (Prevent Auto Download)",
-	"description": "Used to prevent unnecessary wasting of mobile network traffic.\n\nWill prompt the user to confirm before download.\nOnly Useful on Firefox Android, since other platform won't sliently accept downloads.",
-	"version": "1",
+	"default_locale": "en",
+	"name": "__MSG_extensionName__",
+	"description": "__MSG_extensionDescription__",
+	"version": "1.1",
 	"developer": {
 		"name": "StrongOp",
 		"url": "https://github.com/strongopx/ask-before-download.fx-ext"

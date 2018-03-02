@@ -1,0 +1,50 @@
+{
+    "extensionName": {
+        "message": "Ask Before Download (Prevent Auto Download)",
+        "description": "Name of the extension."
+    },
+    "extensionDescription": {
+        "message": "Used to prevent unnecessary wasting of mobile network traffic.\n\nWill prompt the user to confirm before download.\nOnly Useful on Firefox Android, since other platform won't sliently accept downloads.",
+        "description": "Description of the extension."
+    },
+    "OI-title": {
+        "message": "User Notice"
+    },
+    "OI-fx-android": {
+        "message": "This Addon is only useful on Firefox Android!",
+        "description": "Only useful on Firefox Android."
+    },
+    "OI-fx-other": {
+        "message": "Since Firefox on current platform， already prompt the user to confirm before download."
+    },
+    "UAP-title": {
+        "message": "Caution! Download file!"
+    },
+    "UAP-tab": {
+        "message": "Tab:"
+    },
+    "UAP-want-to-download": {
+        "message": "Want to download:"
+    },
+    "UAP-size": {
+        "message": "Size:"
+    },
+    "UAP-remember-action-for": {
+        "message": "Remember my action for:"
+    },
+    "UAP-remember-web-site": {
+        "message": "Web Site:"
+    },
+    "UAP-mime-type": {
+        "message": "Mime Type:"
+    },
+    "UAP-file-ext": {
+        "message": "File Ext.:"
+    },
+    "UAP-btn-allow": {
+        "message": "Allow Anyway"
+    },
+    "UAP-btn-reject": {
+        "message": "Reject"
+    }
+}

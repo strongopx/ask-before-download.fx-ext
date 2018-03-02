@@ -75,7 +75,9 @@ function handleMessage(request, sender, sendResponse) {
 
         doc.querySelector("#tab-name").textContent = request.tabName;
         doc.querySelector("#tab-uri").textContent = request.originUrl;
-        doc.querySelector("#file-name").textContent = decodeURIComponent(request.fileName || file_name);
+        try {
+            doc.querySelector("#file-name").textContent = decodeURIComponent(request.fileName || file_name);
+        } catch (e) { }
         doc.querySelector("#file-uri").textContent = request.url;
         doc.querySelector("#file-size").textContent = humanReadableSize(request.fileSize);
 

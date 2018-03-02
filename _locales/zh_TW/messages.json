@@ -1,0 +1,50 @@
+{
+    "extensionName": {
+        "message": "下載前進行確認（攔截自動下載）",
+        "description": "Name of the extension."
+    },
+    "extensionDescription": {
+        "message": "防止移動網絡流量浪費。\n\n下載前提示用戶進行確認。\n僅對Firefox Android版有用，當前平臺已經自帶此功能了。",
+        "description": "Description of the extension."
+    },
+    "OI-title": {
+        "message": "用戶提醒"
+    },
+    "OI-fx-android": {
+        "message": "此擴展只在Firefox安卓版上有用。",
+        "description": "Only useful on Firefox Android."
+    },
+    "OI-fx-other": {
+        "message": "因爲當前平臺的Firefox，下載前已經會提示用戶確認了。"
+    },
+    "UAP-title": {
+        "message": "注意！下載檔案！"
+    },
+    "UAP-tab": {
+        "message": "分頁:"
+    },
+    "UAP-want-to-download": {
+        "message": "請求下載:"
+    },
+    "UAP-size": {
+        "message": "檔案大小:"
+    },
+    "UAP-remember-action-for": {
+        "message": "記住我的選擇:"
+    },
+    "UAP-remember-web-site": {
+        "message": "網站:"
+    },
+    "UAP-mime-type": {
+        "message": "檔案類型:"
+    },
+    "UAP-file-ext": {
+        "message": "擴展名:"
+    },
+    "UAP-btn-allow": {
+        "message": "仍然允許"
+    },
+    "UAP-btn-reject": {
+        "message": "拒絕"
+    }
+}

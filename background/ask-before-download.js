@@ -189,9 +189,20 @@ function getContentInfo(request) {
             && value.indexOf("attachment") > -1) {
             //log("Filename ", value);
             info.contentIsAttachment = true;
-            info.fileName = value;
             try {
-                info.fileName = info.fileName.split("filename=")[1];
+                if (value.indexOf("filename*") < 0) {
+                    info.fileName = value.split("filename=")[1].replace(/^['"]*|['"]*$/g, '');
+                } else {
+                    let ms = value.match(/filename\*\s*=\s*([^'"]+)\s*([^;]+)/g);
+                    if (!ms)
+                        info.fileName = '';
+                    else {
+                        log("filename*", ms);
+                        info.fileName = ms[2];
+                        if (ms[1] && ms[1].toLowerCase() === "utf-8")
+                            info.fileName = decodeURIComponent(info.fileName);
+                    }
+                }
             } catch (e) { }
         } else if (name === "content-type") {
             //log("Content Type ", value);
@@ -292,6 +303,8 @@ browser.webRequest.onHeadersReceived.addListener(
 
 function handleInstalled(details) {
     log("Install reason: ", details.reason);
+    let locale = browser.i18n.getUILanguage();
+    log("locale: ", locale);
     browser.runtime.getPlatformInfo().then((info) => {
         if (info.os !== browser.runtime.PlatformOs.ANDROID) {
             browser.tabs.create({
