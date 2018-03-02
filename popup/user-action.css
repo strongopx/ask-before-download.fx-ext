@@ -5,6 +5,10 @@
 input {
     vertical-align: middle;
 }
+table {
+    border: 1px gray solid;
+    border-collapse: collapse;
+}
 .hidden {
     display: none;
 }
@@ -110,4 +114,9 @@ input[type="button"] {
     padding: 1rem 2rem;
     margin-left: 2vw;
     border-radius: 0.2rem;
+}
+
+table#addon-options td {
+    text-align: center;
+    padding: 0.1vw 0.6vw;
 }

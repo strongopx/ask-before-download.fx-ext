@@ -46,5 +46,26 @@
     },
     "UAP-btn-reject": {
         "message": "Reject"
+    },
+    "OPT-title": {
+        "message":"Ask Before Download Options"
+    },
+    "OPT-remembered-rules": {
+        "message":"Remebered Download Rules"
+    },
+    "OPT-web-site": {
+        "message":"Web Site"
+    },
+    "OPT-mime-type": {
+        "message":"Mime Type"
+    },
+    "OPT-file-ext": {
+        "message":"File Ext."
+    },
+    "OPT-action": {
+        "message":"Action"
+    },
+    "OPT-forget": {
+        "message":"Forget?"
     }
 }

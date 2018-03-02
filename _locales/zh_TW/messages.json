@@ -46,5 +46,26 @@
     },
     "UAP-btn-reject": {
         "message": "拒絕"
+    },
+    "OPT-title": {
+        "message":"下載前進行確認選項"
+    },
+    "OPT-remembered-rules": {
+        "message":"記住的下載選項"
+    },
+    "OPT-web-site": {
+        "message":"網站"
+    },
+    "OPT-mime-type": {
+        "message":"檔案類型"
+    },
+    "OPT-file-ext": {
+        "message":"擴展名"
+    },
+    "OPT-action": {
+        "message":"操作"
+    },
+    "OPT-forget": {
+        "message":"忘記？"
     }
 }

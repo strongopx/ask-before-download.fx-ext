@@ -25,13 +25,13 @@
 			"background/util.js",
 			"background/blacklist.js",
 			"background/whitelist.js",
+			"background/storage.js",
 			"background/ask-before-download.js"
 		]
 	},
-	"web_accessible_resources": [
-		"popup/on-install.html",
-		"popup/user-action-page.html"
-	],
+	"options_ui": {
+		"page": "popup/options.html"
+	},
 	"applications": {
 		"gecko": {
 			"id": "ask-before-download.fx-ext.strongopx@github.com",

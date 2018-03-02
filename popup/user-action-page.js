@@ -1,9 +1,4 @@
-var log = console.log;
-var error = console.error;
-
 log("Ask before download, page start!");
-let doc = document;
-let win = window;
 
 let gSendResponse = null;
 

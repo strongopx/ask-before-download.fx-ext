@@ -1,9 +1,6 @@
 
 log("Ask before download, start!");
 
-function onError(error) {
-    console.error("xxx-Error: ", error);
-}
 
 function handleConnected(port) {
     log("handleConnected", port);
@@ -74,11 +71,7 @@ function inMimeTypeWhiteList(whiteList, type) {
     }
 }
 
-var userMemList = {};
-storage.get("userMemList").then((item) => {
-    log("storage get item ", item);
-    userMemList = item["userMemList"] || {};
-}, onError);
+userMemListLoad();
 
 function handleRememberChoice(mem) {
     if (!mem["host-name"] || !mem["action"])
@@ -92,22 +85,7 @@ function handleRememberChoice(mem) {
     if (mem["file-ext"])
         r0["file-ext"] = new RegExp("\\."+mem["file-ext"]+"\\b");
     //log("typeof file-ext", typeof mem["file-ext"]);
-
-    if (!userMemList[hostname])
-        userMemList[hostname] = [];
-    userMemList[hostname].push(r0);
-    //log("userMemList", userMemList);
-    storage.set({ userMemList }).then(() => {
-        log("storage set ok.", hostname, ":", r0);
-    }, onError);
-}
-
-
-function rootHostName(host) {
-    let r0 = host.split('.');
-    if (r0.length <= 2)
-        return host;
-    return r0[r0.length-2] + "." + r0[r0.length-1];
+    userMemListAdd(hostname, r0);
 }
 
 function checkUserMemList(list, request, type) {

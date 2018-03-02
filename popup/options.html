@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="user-action.css" />
+    <title data-msgid="OPT-title">Ask Before Download Options</title>
+</head>
+
+<body>
+    <h3 data-msgid="OPT-remembered-rules">Remebered Download Rules</h3>
+    <table id="addon-options" border="1">
+        <thead>
+            <tr>
+                <td data-msgid="OPT-web-site">Web Site</td>
+                <td data-msgid="OPT-mime-type">Mime Type</td>
+                <td data-msgid="OPT-file-ext">File Ext.</td>
+                <td data-msgid="OPT-action">Action</td>
+                <td data-msgid="OPT-forget">Forget?</td>
+            </tr>
+        </thead>
+        <tbody id="remember-list">
+
+        </tbody>
+    </table>
+
+    <script src="/background/util.js"></script>
+    <script src="/background/i18n.js"></script>
+    <script src="/background/storage.js"></script>
+    <script src="options.js"></script>
+
+</body>
+
+</html>
