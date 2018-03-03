@@ -1,0 +1,71 @@
+{
+    "extensionName": {
+        "message": "Vor dem Download fragen (Automatischen Download verhindern)",
+        "description": "Name der Erweiterung."
+    },
+    "extensionDescription": {
+        "message": "Wird verwendet, um eine unnötige Verschwendung von mobilem Netzwerkverkehr zu verhindern.\n\nVeranlasst den Benutzer vor dem Download zu bestätigen.\nNur nützlich bei Firefox Android, da andere Plattformen keine Downloads akzeptieren.",
+        "description": "Beschreibung der Erweiterung."
+    },
+    "OI-title": {
+        "message": "Benutzerhinweis"
+    },
+    "OI-fx-android": {
+        "message": "Dieses Addon ist nur bei Firefox Android nützlich!",
+        "description": "Nur nützlich bei Firefox Android."
+    },
+    "OI-fx-other": {
+        "message": "Seit Firefox auf der aktuellen Plattform, den Benutzer bereits aufgefordert, vor dem Download zu bestätigen."
+    },
+    "UAP-title": {
+        "message": "Achtung! Datei herunterladen!"
+    },
+    "UAP-tab": {
+        "message": "Tab:"
+    },
+    "UAP-want-to-download": {
+        "message": "Will herunterladen:"
+    },
+    "UAP-size": {
+        "message": "Größe:"
+    },
+    "UAP-remember-action-for": {
+        "message": "Erinnere dich an meine Aktion für:"
+    },
+    "UAP-remember-web-site": {
+        "message": "Website:"
+    },
+    "UAP-mime-type": {
+        "message": "Dateityp:"
+    },
+    "UAP-file-ext": {
+        "message": "Dateierweiterung:"
+    },
+    "UAP-btn-allow": {
+        "message": "Erlaube trotzdem"
+    },
+    "UAP-btn-reject": {
+        "message": "Ablehnen"
+    },
+    "OPT-title": {
+        "message": "Vor den Download-Optionen fragen"
+    },
+    "OPT-remembered-rules": {
+        "message": "Erinnern Download-Regeln"
+    },
+    "OPT-web-site": {
+        "message": "Website"
+    },
+    "OPT-mime-type": {
+        "message": "Dateityp"
+    },
+    "OPT-file-ext": {
+        "message": "Datei Ext."
+    },
+    "OPT-action": {
+        "message": "Aktion"
+    },
+    "OPT-forget": {
+        "message": "Löschen?"
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "extensionName": {
+        "message": "ダウンロード前に尋ねる（自動ダウンロードの防止）",
+        "description": "拡張の名前。"
+    },
+    "extensionDescription": {
+        "message": "モバイルネットワークトラフィックの無駄な浪費を防ぐために使用します。\n\nダウンロードする前に確認するようユーザーに促します。\nFirefoxのAndroidでは、他のプラットフォームではダウンロードを受け入れないので便利です。",
+        "description": "拡張機能の説明"
+    },
+    "OI-title": {
+        "message": "ユーザー通知"
+    },
+    "OI-fx-android": {
+        "message": "このアドオンはFirefox Androidでのみ有効です！",
+        "description": "Firefox Androidでのみ有効です。"
+    },
+    "OI-fx-other": {
+        "message": "Firefoxは現在のプラットフォーム上にあるので、ダウンロードする前に確認するようにユーザーに促しています。"
+    },
+    "UAP-title": {
+        "message": "注意！ダウンロードファイル！"
+    },
+    "UAP-tab": {
+        "message": "タブ:"
+    },
+    "UAP-want-to-download": {
+        "message": "ダウンロードしたい:"
+    },
+    "UAP-size": {
+        "message": "サイズ:"
+    },
+    "UAP-remember-action-for": {
+        "message": "自分の行動を記憶する:"
+    },
+    "UAP-remember-web-site": {
+        "message": "ウェブサイト:"
+    },
+    "UAP-mime-type": {
+        "message": "ファイルタイプ:"
+    },
+    "UAP-file-ext": {
+        "message": "ファイル拡張子:"
+    },
+    "UAP-btn-allow": {
+        "message": "とにかく許可する"
+    },
+    "UAP-btn-reject": {
+        "message": "拒否"
+    },
+    "OPT-title": {
+        "message": "ダウンロード前に確認するオプション"
+    },
+    "OPT-remembered-rules": {
+        "message": "記憶されたダウンロードルール"
+    },
+    "OPT-web-site": {
+        "message": "ウェブサイト"
+    },
+    "OPT-mime-type": {
+        "message": "ファイルタイプ"
+    },
+    "OPT-file-ext": {
+        "message": "ファイル拡張子"
+    },
+    "OPT-action": {
+        "message": "アクション"
+    },
+    "OPT-forget": {
+        "message": "削除？"
+    }
+}

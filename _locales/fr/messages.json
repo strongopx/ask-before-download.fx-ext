@@ -1,0 +1,71 @@
+{
+    "extensionName": {
+        "message": "Demander avant le téléchargement (empêcher le téléchargement automatique)",
+        "description": "Nom de l'extension."
+    },
+    "extensionDescription": {
+        "message": "Utilisé pour éviter le gaspillage inutile du trafic du réseau mobile.\n\nInvitera l'utilisateur à confirmer avant le téléchargement.\nSeulement utile sur Firefox Android, puisque les autres plateformes n'acceptent pas les téléchargements.",
+        "description": "Description de l'extension."
+    },
+    "OI-title": {
+        "message": "Avis d'utilisateur"
+    },
+    "OI-fx-android": {
+        "message": "Cet addon n'est utile que sur Firefox Android!",
+        "description": "Seulement utile sur Firefox Android."
+    },
+    "OI-fx-other": {
+        "message": "Depuis Firefox sur la plate-forme actuelle, invite l'utilisateur à confirmer avant le téléchargement."
+    },
+    "UAP-title": {
+        "message": "Attention! Téléchargez le fichier!"
+    },
+    "UAP-tab": {
+        "message": "Onglet:"
+    },
+    "UAP-want-to-download": {
+        "message": "Voulez-vous télécharger:"
+    },
+    "UAP-size": {
+        "message": "Taille:"
+    },
+    "UAP-remember-action-for": {
+        "message": "Rappelez-vous mon action pour:"
+    },
+    "UAP-remember-web-site": {
+        "message": "Site Web:"
+    },
+    "UAP-mime-type": {
+        "message": "Type Mime:"
+    },
+    "UAP-file-ext": {
+        "message": "Fichier Ext .:"
+    },
+    "UAP-btn-allow": {
+        "message": "Autoriser quand même"
+    },
+    "UAP-btn-reject": {
+        "message": "Rejeter"
+    },
+    "OPT-title": {
+        "message": "Demander avant les options de téléchargement"
+    },
+    "OPT-remembered-rules": {
+        "message": "Règles de téléchargement mémorisées"
+    },
+    "OPT-web-site": {
+        "message": "Site Web"
+    },
+    "OPT-mime-type": {
+        "message": "Type Mime"
+    },
+    "OPT-file-ext": {
+        "message": "Fichier Ext."
+    },
+    "OPT-action": {
+        "message": "Action"
+    },
+    "OPT-forget": {
+        "message": "Supprimer?"
+    }
+}

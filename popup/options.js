@@ -1,26 +1,36 @@
 
 log("Ask before download, options page start.");
 
-function forgetMem(e) {
+function sendForgetRule(e) {
     let node = e.target;
-    log("forgetMem ", node);
+    log("sendForgetRule ", node);
     let hostname = node.ruleInfo["hostname"];
     let rule = node.ruleInfo["rule"];
     let hostnameCol = node.ruleInfo["hostnameCol"];
 
-    let empty = userMemListRemove(hostname, rule);
-    node.parentNode.parentNode.remove();
+    //userRuleListRemove(hostname, rule);
+    browser.runtime.sendMessage({
+        action: "forgetRule",
+        hostname: hostname,
+        rule: rule,
+    }).then(log, log);
+    let row = node.parentNode.parentNode;
     hostnameCol.rowSpan--;
+    if (hostnameCol.parentNode ==  row && hostnameCol.rowSpan > 0) {
+        let nextRow = row.nextSibling;
+        nextRow.insertBefore(hostnameCol, nextRow.firstChild);
+    }
+    row.remove();
 }
 
-function showMemList() {
+function showUserRuleList() {
     doc.querySelector("#remember-list").remove();
     let tbody = doc.createElement("TBODY");
     //tbody.innerHTML = '';
     let rowIdx = 0;
     let row = tbody.insertRow(rowIdx++);
-    for (let hostname of Object.keys(userMemList)) {
-        let ruleList = userMemList[hostname];
+    for (let hostname of Object.keys(userRuleList)) {
+        let ruleList = userRuleList[hostname];
         let colIdx = 0;
         let col = row.insertCell(colIdx++);
         col.appendChild(doc.createTextNode(hostname));
@@ -29,14 +39,14 @@ function showMemList() {
         //col = row.insertCell(colIdx++);
         //let div = doc.createElement("DIV");
         //col.append(div);
-        log("hostname ", hostname);
+        log("\nhostname ", hostname);
         for (let rule of ruleList) {
             log("rule ", rule);
             for (let r0 of ["mime-type", "file-ext", "action"]) {
-                let text = rule[r0].toString();
-                log(text)
-                if (r0 === "file-ext") {
-                    text = text.replace(/^\/\\\.|\\b\/$/g, '')
+                let text = rule[r0];
+                //log(text)
+                if (text && r0 === "file-ext") {
+                    text = text.replace(/^\\\.|\\b$/g, '')
                 }
                 col = row.insertCell(colIdx++);
                 col.appendChild(doc.createTextNode(text));
@@ -45,7 +55,7 @@ function showMemList() {
             let r0 = doc.createElement("A");
             r0.textContent = "X";
             r0.href = "javascript:void(0)";
-            r0.onclick = forgetMem;
+            r0.onclick = sendForgetRule;
             r0.ruleInfo = {};
             r0.ruleInfo["hostname"] = hostname;
             r0.ruleInfo["rule"] = rule;
@@ -58,7 +68,8 @@ function showMemList() {
     }
 
     doc.querySelector("#addon-options").appendChild(tbody);
+    log("\n");
 }
 
-userMemListLoad(showMemList);
+userRuleListLoad(showUserRuleList);
 log("Ask before download, options page end.");

@@ -2,65 +2,6 @@ log("Ask before download, page start!");
 
 let gSendResponse = null;
 
-function splitURL(url) {
-    let i = url.indexOf("?");
-    let param;
-    var left;
-    if (i > -1) {
-        left = url.substring(0, i);
-        param = url.substring(i);
-    } else if ((i = url.indexOf('#')) > -1) {
-        left = url.substring(0, i);
-        param = url.substring(i);
-    } else {
-        left = url;
-    }
-    i = left.lastIndexOf('/') + 1;
-    let schem_auth_dir = left.substring(0, i);
-    let file_name = left.substring(i);
-    //log("splitURL ", schem_auth_dir, file_name, param);
-    return [schem_auth_dir, file_name, param];
-}
-
-const SIZE_STEP = 1<<10;
-const SIZE_GB = 1<<30;
-const SIZE_MB = 1<<20;
-const SIZE_KB = 1<<10;
-function humanReadableSize(size) {
-    size = parseInt(size);
-    if (isNaN(size))
-        return "unknown";
-    let gb = Math.floor(size / SIZE_GB);
-    size -= gb * SIZE_GB;
-    let mb = Math.floor(size / SIZE_MB);
-    size -= mb * SIZE_MB;
-    let kb = Math.floor(size / SIZE_KB);
-    size -= kb * SIZE_KB;
-
-    let ret = "";
-    if (gb)
-        ret = gb + "." + Math.floor((mb/SIZE_STEP)*100) + " GB";
-    else if (mb)
-        ret = mb + "." + Math.floor((kb/SIZE_STEP)*100) + " MB";
-    else
-        ret = kb + "." + Math.floor((size/SIZE_STEP)*100) + " KB";
-    return ret;
-}
-
-function rootHostName(host) {
-    let r0 = host.split('.');
-    if (r0.length <= 2)
-        return host;
-    return r0[r0.length-2] + "." + r0[r0.length-1];
-}
-
-function getFileExt(name) {
-    let i = name.lastIndexOf('.');
-    if (i < 0)
-        return "";
-    return name.substring(i+1);
-}
-
 function handleMessage(request, sender, sendResponse) {
     log("handleMessage ", request, sender, sendResponse);
     if (request.action === "download") {
@@ -78,22 +19,20 @@ function handleMessage(request, sender, sendResponse) {
 
         doc.querySelector("#host-name").textContent = originUrl.hostname;
         doc.querySelector("#host-name-radio").value = originUrl.hostname;
-        let rootHost = "*." + rootHostName(originUrl.hostname);
-        doc.querySelector("#root-host-name").textContent = rootHost;
-        doc.querySelector("#root-host-name-radio").value = rootHost;
+        let wildHostname = wildSubHostname(originUrl.hostname);
+        doc.querySelector("#wild-host-name").textContent = wildHostname;
+        doc.querySelector("#wild-host-name-radio").value = wildHostname;
 
-        if (request.mimeType) {
-            doc.querySelector("#mime-type").textContent = request.mimeType;
-            doc.querySelector("#mime-type-check").value = request.mimeType;
-        } else {
+        doc.querySelector("#mime-type").textContent = request.mimeType;
+        doc.querySelector("#mime-type-check").value = request.mimeType;
+        if (!request.mimeType) {
             doc.querySelector("#mime-type-div").style.display =  "none";
         }
 
         let ext = getFileExt(request.fileName || file_name);
-        if (ext) {
-            doc.querySelector("#file-ext").textContent = ext;
-            doc.querySelector("#file-ext-check").value = ext;
-        } else {
+        doc.querySelector("#file-ext").textContent = ext;
+        doc.querySelector("#file-ext-check").value = ext;
+        if (!ext) {
             doc.querySelector("#file-ext-div").style.display = "none";
         }
     }

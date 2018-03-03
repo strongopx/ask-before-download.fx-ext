@@ -1,0 +1,71 @@
+{
+    "extensionName": {
+        "message": "Preguntar antes de descargar (evitar la descarga automática)",
+        "description": "Nombre de la extensión"
+    },
+    "extensionDescription": {
+        "message": "Se usa para evitar el desperdicio innecesario del tráfico de la red móvil.\n\nSolicite al usuario que confirme antes de la descarga.\nSolo es útil en Firefox Android, ya que otras plataformas no aceptarán las descargas de manera lenta",
+        "description": "Descripción de la extensión"
+    },
+    "OI-title": {
+        "message": "Aviso al Usuario"
+    },
+    "OI-fx-android": {
+        "message": "¡Este complemento solo es útil en Firefox Android!",
+        "description": "Solo es útil en Firefox Android"
+    },
+    "OI-fx-other": {
+        "message": "Desde Firefox en la plataforma actual, ya solicitamos al usuario que confirme antes de la descarga"
+    },
+    "UAP-title": {
+        "message": "¡Cuidado, descargue el archivo!"
+    },
+    "UAP-tab": {
+        "message": "Pestaña:"
+    },
+    "UAP-want-to-download": {
+        "message": "Quiere descargar:"
+    },
+    "UAP-size": {
+        "message": "Tamaño:"
+    },
+    "UAP-remember-action-for": {
+        "message": "Recuerda mi acción por:"
+    },
+    "UAP-remember-web-site": {
+        "message": "Sitio web:"
+    },
+    "UAP-mime-type": {
+        "message": "Tipo Mime:"
+    },
+    "UAP-file-ext": {
+        "message": "Archivo Ext.:"
+    },
+    "UAP-btn-allow": {
+        "message": "Permitir de todos modos"
+    },
+    "UAP-btn-reject": {
+        "message": "Rechazar"
+    },
+    "OPT-title": {
+        "message": "Preguntar antes de las opciones de descarga"
+    },
+    "OPT-remembered-rules": {
+        "message": "Reglas de descarga recordadas"
+    },
+    "OPT-web-site": {
+        "message": "Sitio web"
+    },
+    "OPT-mime-type": {
+        "message": "Tipo de Mime"
+    },
+    "OPT-file-ext": {
+        "message": "Archivo Ext."
+    },
+    "OPT-action": {
+        "message": "Acción"
+    },
+    "OPT-forget": {
+        "message": "¿Eliminar?"
+    }
+}

@@ -1,44 +1,56 @@
 
-var userMemList = {};
+var userRuleList = {};
 
-function userMemListLoad(next) {
-    storage.get("userMemList").then((item) => {
+function userRuleListLoad(next) {
+    storage.get("userRuleList").then((item) => {
         log("storage get item ", item);
-        userMemList = item["userMemList"] || {};
+        userRuleList = item["userRuleList"] || {};
         if (next)
-            next(userMemList);
+            next(userRuleList);
     }, onError);
 }
-function userMemListAdd(hostname, item) {
-    if (!userMemList[hostname])
-        userMemList[hostname] = [];
 
-    userMemList[hostname].push(item);
-    //log("userMemList", userMemList);
-    storage.set({ userMemList }).then(() => {
+function userRuleListAdd(hostname, item) {
+    if (!userRuleList[hostname])
+        userRuleList[hostname] = [];
+
+    userRuleList[hostname].push(item);
+    //log("userRuleList", userRuleList);
+    storage.set({ userRuleList }).then(() => {
         log("storage set ok.", hostname, ":", item);
     }, onError);
 }
 
-function userMemListRemove(hostname, item) {
-    let ruleList = userMemList[hostname];
+function isRuleEqual(ra, rb) {
+    return ra["action"] == rb["action"] &&
+        ra["mime-type"] == rb["mime-type"] &&
+        ra["file-ext"] == rb["file-ext"];
+}
+
+function userRuleListRemove(hostname, rule) {
+    let ruleList = userRuleList[hostname];
     if (!ruleList)
         return;
+    let found = false;
     for (let i = 0; i < ruleList.length; i++) {
         let e = ruleList[i];
-        if (e["action"] == item["action"] &&
-            e["mime-type"] == item["mime-type"] &&
-            e["file-ext"] == item["file-ext"]) {
-            log("userMemListRemove found match.")
+        log(i, e);
+        if (isRuleEqual(e, rule)) {
+            found = true;
+            log("userRuleListRemove found match.")
             ruleList.splice(i, 1);
             break;
         }
     }
+    if (!found) {
+        error("*** No existing rule match the request one: ", hostname, ":", rule);
+        return;
+    }
     if (ruleList.length == 0)
-        delete userMemList[hostname];
-    //log("userMemList", userMemList);
-    storage.set({ userMemList }).then(() => {
-        log("storage set ok.", hostname, ":", item);
+        delete userRuleList[hostname];
+    //log("userRuleList", userRuleList);
+    storage.set({ userRuleList }).then(() => {
+        log("storage set ok. Removed ", hostname, ":", rule);
     }, onError);
-    return ruleList.length == 0;
+    return;
 }

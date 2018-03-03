@@ -39,8 +39,6 @@ function procConentType(type) {
     return r0;
 }
 
-const MIME_STREAM = "application/octet-stream";
-
 function checkBlackList(blackList, request, type) {
     let url = request.url;
     let exts = blackList[type];
@@ -71,7 +69,7 @@ function inMimeTypeWhiteList(whiteList, type) {
     }
 }
 
-userMemListLoad();
+userRuleListLoad();
 
 function handleRememberChoice(mem) {
     if (!mem["host-name"] || !mem["action"])
@@ -83,30 +81,31 @@ function handleRememberChoice(mem) {
     //    r0["host-name"] = new RegExp(mem["host-name"].replace(".", "\\.") + "$");
     r0["mime-type"] = mem["mime-type"];
     if (mem["file-ext"])
-        r0["file-ext"] = new RegExp("\\."+mem["file-ext"]+"\\b");
+        r0["file-ext"] = "\\."+mem["file-ext"]+"\\b";
     //log("typeof file-ext", typeof mem["file-ext"]);
-    userMemListAdd(hostname, r0);
+    userRuleListAdd(hostname, r0);
 }
 
-function checkUserMemList(list, request, type) {
+function checkUserRuleList(list, request, fileName, contentType) {
     let originUrl = new URL(request.originUrl || request.url);
     let hostname = originUrl.hostname;
-    let rootHostname = "*." + rootHostName(hostname);
+    let wildHostname = wildSubHostname(hostname);
+
     let rs = [];
     rs = rs.concat(list[hostname]);
-    if (hostname !== rootHostname)
-        rs = rs.concat(list[rootHostname]);
+    if (hostname !== wildHostname)
+        rs = rs.concat(list[wildHostname]);
     if (rs.length === 0)
         return;
-    //log("mem rules:", rs)
+    log("mem rules:", rs)
     for (let r of rs) {
         if (!r)
             continue;
-        if (r["mime-type"] && r["mime-type"] !== type)
+        if (r["mime-type"] && r["mime-type"] !== contentType)
             continue;
-        if (r["file-ext"] && !r["file-ext"].test(request.url))
+        if (r["file-ext"] && !(new RegExp(r["file-ext"])).test(fileName || request.url))
             continue;
-        //log("userMemList match ", r);
+        log("userRuleList match ", r);
         return { cancel: r["action"] === "reject" };
     }
 }
@@ -158,7 +157,12 @@ function popupUserActionPage(request, msg, sendResponse) {
 
 function getContentInfo(request) {
     let respHdr = request.responseHeaders;
-    let info = {};
+    let info = {
+        contentIsAttachment: false,
+        fileName: '',
+        contentType: '',
+        contentLength: '',
+    };
     //log("resp headers ", respHdr);
     for (let i = respHdr.length - 1; i >= 0; i--) {
         let name = respHdr[i].name.toLowerCase();
@@ -193,9 +197,6 @@ function getContentInfo(request) {
     return info
 }
 
-const SIZE_MB = 1<<20;
-const SIZE_LARGE_STREAM = 10<<20;
-
 function isLargeOctetStream(contentType, fileSize){
     if (contentType !== "application/octet-stream")
         return false;
@@ -220,15 +221,17 @@ function filterRequest(request) {
     let url = request.url;
     let contentType = respHdr.contentType;
 
-    /*
     log("url ", url);
     log("request ", request);
     log("contentType ", contentType);
-    log("userMemList ", userMemList);
+    log("userRuleList ", userRuleList);
+    /*
     */
     let r0;
     try {
-        r0 = checkUserMemList(userMemList, request, contentType);
+        r0 = checkUserRuleList(userRuleList, request, respHdr.fileName, contentType);
+        if (typeof r0 === "object")
+            return r0;
     } catch (e) { }
     if (typeof r0 === "object") {
         return r0;
@@ -279,6 +282,14 @@ browser.webRequest.onHeadersReceived.addListener(
     ["blocking", "responseHeaders"]
 );
 
+function handleMessage(msg, sender, sendResponse) {
+    if (msg.action === "forgetRule") {
+        log("msg.action === forgetRule");
+        userRuleListRemove(msg.hostname, msg.rule);
+    }
+}
+browser.runtime.onMessage.addListener(handleMessage);
+
 function handleInstalled(details) {
     log("Install reason: ", details.reason);
     let locale = browser.i18n.getUILanguage();
@@ -288,6 +299,11 @@ function handleInstalled(details) {
             browser.tabs.create({
                 url: browser.extension.getURL("popup/on-install.html"),
             });
+            /*
+            browser.tabs.create({
+                url: browser.extension.getURL("popup/options.html"),
+            });
+            */
         }
     });
 }

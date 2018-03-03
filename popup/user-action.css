@@ -5,10 +5,7 @@
 input {
     vertical-align: middle;
 }
-table {
-    border: 1px gray solid;
-    border-collapse: collapse;
-}
+
 .hidden {
     display: none;
 }
@@ -26,6 +23,9 @@ table {
 }
 .red-text {
     color: red;
+}
+.bold {
+    font-weight: bold;
 }
 .button {
     display: inline-block;
@@ -69,7 +69,7 @@ input[type="button"] {
     padding: 1rem;
     word-break: break-all;
 }
-#user-confirm {
+#user-confirm, #addon-options-div {
     border-radius: 0.5rem;
     border: 1px solid teal;
     max-width: 40rem;
@@ -78,8 +78,11 @@ input[type="button"] {
     padding: 1.2vw;
     word-break: break-all;
 }
+#addon-options-div {
+    max-width: 60rem;
+}
 @media screen and (max-width: 40rem) {
-    #user-confirm {
+    #user-confirm, #addon-options-div {
         border: unset;
         margin: 0;
         padding: 0.5vw;
@@ -115,8 +118,15 @@ input[type="button"] {
     margin-left: 2vw;
     border-radius: 0.2rem;
 }
-
+table#addon-options {
+    border: 1px gray solid;
+    border-collapse: collapse;
+    margin: auto;
+}
 table#addon-options td {
     text-align: center;
     padding: 0.1vw 0.6vw;
+}
+#addon-options-div h3 {
+    text-align: center;
 }

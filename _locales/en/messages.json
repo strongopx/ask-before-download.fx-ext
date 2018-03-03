@@ -15,7 +15,7 @@
         "description": "Only useful on Firefox Android."
     },
     "OI-fx-other": {
-        "message": "Since Firefox on current platform， already prompt the user to confirm before download."
+        "message": "Since Firefox on current platform, already prompt the user to confirm before download."
     },
     "UAP-title": {
         "message": "Caution! Download file!"
@@ -51,7 +51,7 @@
         "message":"Ask Before Download Options"
     },
     "OPT-remembered-rules": {
-        "message":"Remebered Download Rules"
+        "message":"Remembered Download Rules"
     },
     "OPT-web-site": {
         "message":"Web Site"
@@ -66,6 +66,6 @@
         "message":"Action"
     },
     "OPT-forget": {
-        "message":"Forget?"
+        "message":"Delete?"
     }
 }
