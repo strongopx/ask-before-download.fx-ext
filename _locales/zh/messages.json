@@ -4,7 +4,7 @@
         "description": "Name of the extension."
     },
     "extensionDescription": {
-        "message": "防止移动网络流量浪费。\n\n下载前提示用户进行确认。\n仅对Firefox Android版有用，当前平台已经自带此功能了。",
+        "message": "防止移动网络流量浪费。\n\n下载前提示用户进行确认。\n仅对Firefox Android版有用，其他平台已经自带此功能了。",
         "description": "Description of the extension."
     },
     "OI_title": {
