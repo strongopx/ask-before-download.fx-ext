@@ -7,65 +7,65 @@
         "message": "Utilisé pour éviter le gaspillage inutile du trafic du réseau mobile.\n\nInvitera l'utilisateur à confirmer avant le téléchargement.\nSeulement utile sur Firefox Android, puisque les autres plateformes n'acceptent pas les téléchargements.",
         "description": "Description de l'extension."
     },
-    "OI-title": {
+    "OI_title": {
         "message": "Avis d'utilisateur"
     },
-    "OI-fx-android": {
+    "OI_fx_android": {
         "message": "Cet addon n'est utile que sur Firefox Android!",
         "description": "Seulement utile sur Firefox Android."
     },
-    "OI-fx-other": {
-        "message": "Depuis Firefox sur la plate-forme actuelle, invite l'utilisateur à confirmer avant le téléchargement."
+    "OI_fx_other": {
+        "message": "Depuis Firefox sur la plate_forme actuelle, invite l'utilisateur à confirmer avant le téléchargement."
     },
-    "UAP-title": {
+    "UAP_title": {
         "message": "Attention! Téléchargez le fichier!"
     },
-    "UAP-tab": {
+    "UAP_tab": {
         "message": "Onglet:"
     },
-    "UAP-want-to-download": {
-        "message": "Voulez-vous télécharger:"
+    "UAP_want_to_download": {
+        "message": "Voulez_vous télécharger:"
     },
-    "UAP-size": {
+    "UAP_size": {
         "message": "Taille:"
     },
-    "UAP-remember-action-for": {
-        "message": "Rappelez-vous mon action pour:"
+    "UAP_remember_action_for": {
+        "message": "Rappelez_vous mon action pour:"
     },
-    "UAP-remember-web-site": {
+    "UAP_remember_web_site": {
         "message": "Site Web:"
     },
-    "UAP-mime-type": {
+    "UAP_mime_type": {
         "message": "Type Mime:"
     },
-    "UAP-file-ext": {
+    "UAP_file_ext": {
         "message": "Fichier Ext .:"
     },
-    "UAP-btn-allow": {
+    "UAP_btn_allow": {
         "message": "Autoriser quand même"
     },
-    "UAP-btn-reject": {
+    "UAP_btn_reject": {
         "message": "Rejeter"
     },
-    "OPT-title": {
+    "OPT_title": {
         "message": "Demander avant les options de téléchargement"
     },
-    "OPT-remembered-rules": {
+    "OPT_remembered_rules": {
         "message": "Règles de téléchargement mémorisées"
     },
-    "OPT-web-site": {
+    "OPT_web_site": {
         "message": "Site Web"
     },
-    "OPT-mime-type": {
+    "OPT_mime_type": {
         "message": "Type Mime"
     },
-    "OPT-file-ext": {
+    "OPT_file_ext": {
         "message": "Fichier Ext."
     },
-    "OPT-action": {
+    "OPT_action": {
         "message": "Action"
     },
-    "OPT-forget": {
+    "OPT_forget": {
         "message": "Supprimer?"
     }
 }

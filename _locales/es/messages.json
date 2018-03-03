@@ -7,65 +7,65 @@
         "message": "Se usa para evitar el desperdicio innecesario del tráfico de la red móvil.\n\nSolicite al usuario que confirme antes de la descarga.\nSolo es útil en Firefox Android, ya que otras plataformas no aceptarán las descargas de manera lenta",
         "description": "Descripción de la extensión"
     },
-    "OI-title": {
+    "OI_title": {
         "message": "Aviso al Usuario"
     },
-    "OI-fx-android": {
+    "OI_fx_android": {
         "message": "¡Este complemento solo es útil en Firefox Android!",
         "description": "Solo es útil en Firefox Android"
     },
-    "OI-fx-other": {
+    "OI_fx_other": {
         "message": "Desde Firefox en la plataforma actual, ya solicitamos al usuario que confirme antes de la descarga"
     },
-    "UAP-title": {
+    "UAP_title": {
         "message": "¡Cuidado, descargue el archivo!"
     },
-    "UAP-tab": {
+    "UAP_tab": {
         "message": "Pestaña:"
     },
-    "UAP-want-to-download": {
+    "UAP_want_to_download": {
         "message": "Quiere descargar:"
     },
-    "UAP-size": {
+    "UAP_size": {
         "message": "Tamaño:"
     },
-    "UAP-remember-action-for": {
+    "UAP_remember_action_for": {
         "message": "Recuerda mi acción por:"
     },
-    "UAP-remember-web-site": {
+    "UAP_remember_web_site": {
         "message": "Sitio web:"
     },
-    "UAP-mime-type": {
+    "UAP_mime_type": {
         "message": "Tipo Mime:"
     },
-    "UAP-file-ext": {
+    "UAP_file_ext": {
         "message": "Archivo Ext.:"
     },
-    "UAP-btn-allow": {
+    "UAP_btn_allow": {
         "message": "Permitir de todos modos"
     },
-    "UAP-btn-reject": {
+    "UAP_btn_reject": {
         "message": "Rechazar"
     },
-    "OPT-title": {
+    "OPT_title": {
         "message": "Preguntar antes de las opciones de descarga"
     },
-    "OPT-remembered-rules": {
+    "OPT_remembered_rules": {
         "message": "Reglas de descarga recordadas"
     },
-    "OPT-web-site": {
+    "OPT_web_site": {
         "message": "Sitio web"
     },
-    "OPT-mime-type": {
+    "OPT_mime_type": {
         "message": "Tipo de Mime"
     },
-    "OPT-file-ext": {
+    "OPT_file_ext": {
         "message": "Archivo Ext."
     },
-    "OPT-action": {
+    "OPT_action": {
         "message": "Acción"
     },
-    "OPT-forget": {
+    "OPT_forget": {
         "message": "¿Eliminar?"
     }
 }

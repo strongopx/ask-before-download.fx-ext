@@ -7,65 +7,65 @@
         "message": "Используется для предотвращения ненужного расторжения трафика мобильной сети.\n\nБудет запрашивать подтверждение пользователя перед загрузкой.\nТолько полезно на Firefox Android, так как другая платформа не будет достаточно принимать заказы",
         "description": "Описание расширения"
     },
-    "OI-title": {
+    "OI_title": {
         "message": "Уведомление пользователя"
     },
-    "OI-fx-android": {
+    "OI_fx_android": {
         "message": "Этот аддон полезен только для Firefox Android!",
         "description": "Полезно только для Firefox Android"
     },
-    "OI-fx-other": {
+    "OI_fx_other": {
         "message": "Начиная с Firefox на текущей платформе, уже запрашивают пользователя для подтверждения перед загрузкой"
     },
-    "UAP-title": {
+    "UAP_title": {
         "message": "Внимание! Скачать файл!"
     },
-    "UAP-tab": {
+    "UAP_tab": {
         "message": "Tab:"
     },
-    "UAP-want-to-download": {
+    "UAP_want_to_download": {
         "message": "Хотите загрузить:"
     },
-    "UAP-size": {
+    "UAP_size": {
         "message": "Size:"
     },
-    "UAP-remember-action-for": {
+    "UAP_remember_action_for": {
         "message": "Запомните мое действие для:"
     },
-    "UAP-remember-web-site": {
-        "message": "Веб-сайт:"
+    "UAP_remember_web_site": {
+        "message": "Веб_сайт:"
     },
-    "UAP-mime-type": {
+    "UAP_mime_type": {
         "message": "Тип файла:"
     },
-    "UAP-file-ext": {
+    "UAP_file_ext": {
         "message": "File Ext .:"
     },
-    "UAP-btn-allow": {
+    "UAP_btn_allow": {
         "message": "Разрешить в любом случае"
     },
-    "UAP-btn-reject": {
+    "UAP_btn_reject": {
         "message": "Отклонить"
     },
-    "OPT-title": {
+    "OPT_title": {
         "message": "Задайте перед загрузкой"
     },
-    "OPT-remembered-rules": {
+    "OPT_remembered_rules": {
         "message": "Remembered Download Rules"
     },
-    "OPT-web-site": {
-        "message": "Веб-сайт"
+    "OPT_web_site": {
+        "message": "Веб_сайт"
     },
-    "OPT-mime-type": {
+    "OPT_mime_type": {
         "message": "Тип файла"
     },
-    "OPT-file-ext": {
+    "OPT_file_ext": {
         "message": "File Ext."
     },
-    "OPT-action": {
+    "OPT_action": {
         "message": "Действие"
     },
-    "OPT-forget": {
+    "OPT_forget": {
         "message": "Удалить?"
     }
 }

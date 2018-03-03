@@ -6,40 +6,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="user-action.css" />
-    <title data-msgid="UAP-title">Caution! Download file!</title>
+    <title data-msgid="UAP_title">Caution! Download file!</title>
 </head>
 
 <body>
     <div id="user-confirm">
-        <span class="desc-type" data-msgid="UAP-tab">Tab:</span>
+        <span class="desc-type" data-msgid="UAP_tab">Tab:</span>
         <div id="tab-name" class="name"></div>
         <div id="tab-uri" class="uri"></div>
         <div class="vspace-half"></div>
-        <span class="desc-type" data-msgid="UAP-want-to-download">Want to download:</span><br />
+        <span class="desc-type" data-msgid="UAP_want_to_download">Want to download:</span><br />
         <div id="file-name" class="name-caution"></div>
         <div id="file-uri" class="uri"></div>
         <div class="vspace-half"></div>
-        <span class="desc-type" data-msgid="UAP-size">Size:</span><br />
+        <span class="desc-type" data-msgid="UAP_size">Size:</span><br />
         <div id="file-size"></div>
         <div class="vspace-1"></div>
-        <label><input type=checkbox id="remember-choice"><span data-msgid="UAP-remember-action-for">Remember my action for:</span><br /></label>
+        <label><input type=checkbox id="remember-choice"><span data-msgid="UAP_remember_action_for">Remember my action for:</span><br /></label>
         <form id="remember-choice-div" class="hidden">
             <table>
                 <tr id="host-name-div">
-                    <td data-msgid="UAP-remember-web-site">Web Site:</td>
+                    <td data-msgid="UAP_remember_web_site">Web Site:</td>
                     <td>
                         <label><input type="radio" id="host-name-radio" name="host-name" value="" checked><span id="host-name"></span></label>
                         <label><input type="radio" id="wild-host-name-radio" name="host-name" value=""><span id="wild-host-name"></span></label>
                     </td>
                 </tr>
                 <tr id="mime-type-div">
-                    <td data-msgid="UAP-mime-type">Mime Type:</td>
+                    <td data-msgid="UAP_mime_type">Mime Type:</td>
                     <td>
                         <label><input type="checkbox" id="mime-type-check" name="mime-type" value="" checked><span id="mime-type"></span></label>
                     </td>
                 </tr>
                 <tr id="file-ext-div">
-                    <td data-msgid="UAP-file-ext">File Ext.:</td>
+                    <td data-msgid="UAP_file_ext">File Ext.:</td>
                     <td>
                         <label><input type="checkbox" id="file-ext-check" name="file-ext" value="" checked><span id="file-ext"></span></label>
                     </td>
@@ -47,8 +47,8 @@
             </table>
         </form>
         <div id="user-choice" class="vspace-1">
-            <input type="button" id="btn-allow" class="red-text" value="Allow Anyway" data-msgid="UAP-btn-allow"/>
-            <input type="button" id="btn-reject" class="green-text" value="Reject" data-msgid="UAP-btn-reject"/>
+            <input type="button" id="btn-allow" class="red-text" value="Allow Anyway" data-msgid="UAP_btn_allow"/>
+            <input type="button" id="btn-reject" class="green-text" value="Reject" data-msgid="UAP_btn_reject"/>
         </div>
     </div>
     <div id="error-content" class="hidden">

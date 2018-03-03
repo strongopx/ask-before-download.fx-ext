@@ -7,65 +7,65 @@
         "message": "Wird verwendet, um eine unnötige Verschwendung von mobilem Netzwerkverkehr zu verhindern.\n\nVeranlasst den Benutzer vor dem Download zu bestätigen.\nNur nützlich bei Firefox Android, da andere Plattformen keine Downloads akzeptieren.",
         "description": "Beschreibung der Erweiterung."
     },
-    "OI-title": {
+    "OI_title": {
         "message": "Benutzerhinweis"
     },
-    "OI-fx-android": {
+    "OI_fx_android": {
         "message": "Dieses Addon ist nur bei Firefox Android nützlich!",
         "description": "Nur nützlich bei Firefox Android."
     },
-    "OI-fx-other": {
+    "OI_fx_other": {
         "message": "Seit Firefox auf der aktuellen Plattform, den Benutzer bereits aufgefordert, vor dem Download zu bestätigen."
     },
-    "UAP-title": {
+    "UAP_title": {
         "message": "Achtung! Datei herunterladen!"
     },
-    "UAP-tab": {
+    "UAP_tab": {
         "message": "Tab:"
     },
-    "UAP-want-to-download": {
+    "UAP_want_to_download": {
         "message": "Will herunterladen:"
     },
-    "UAP-size": {
+    "UAP_size": {
         "message": "Größe:"
     },
-    "UAP-remember-action-for": {
+    "UAP_remember_action_for": {
         "message": "Erinnere dich an meine Aktion für:"
     },
-    "UAP-remember-web-site": {
+    "UAP_remember_web_site": {
         "message": "Website:"
     },
-    "UAP-mime-type": {
+    "UAP_mime_type": {
         "message": "Dateityp:"
     },
-    "UAP-file-ext": {
+    "UAP_file_ext": {
         "message": "Dateierweiterung:"
     },
-    "UAP-btn-allow": {
+    "UAP_btn_allow": {
         "message": "Erlaube trotzdem"
     },
-    "UAP-btn-reject": {
+    "UAP_btn_reject": {
         "message": "Ablehnen"
     },
-    "OPT-title": {
-        "message": "Vor den Download-Optionen fragen"
+    "OPT_title": {
+        "message": "Vor den Download_Optionen fragen"
     },
-    "OPT-remembered-rules": {
-        "message": "Erinnern Download-Regeln"
+    "OPT_remembered_rules": {
+        "message": "Erinnern Download_Regeln"
     },
-    "OPT-web-site": {
+    "OPT_web_site": {
         "message": "Website"
     },
-    "OPT-mime-type": {
+    "OPT_mime_type": {
         "message": "Dateityp"
     },
-    "OPT-file-ext": {
+    "OPT_file_ext": {
         "message": "Datei Ext."
     },
-    "OPT-action": {
+    "OPT_action": {
         "message": "Aktion"
     },
-    "OPT-forget": {
+    "OPT_forget": {
         "message": "Löschen?"
     }
 }

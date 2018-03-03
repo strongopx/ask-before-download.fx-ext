@@ -7,65 +7,65 @@
         "message": "防止移動網絡流量浪費。\n\n下載前提示用戶進行確認。\n僅對Firefox Android版有用，當前平臺已經自帶此功能了。",
         "description": "Description of the extension."
     },
-    "OI-title": {
+    "OI_title": {
         "message": "用戶提醒"
     },
-    "OI-fx-android": {
+    "OI_fx_android": {
         "message": "此擴展只在Firefox安卓版上有用。",
         "description": "Only useful on Firefox Android."
     },
-    "OI-fx-other": {
+    "OI_fx_other": {
         "message": "因爲當前平臺的Firefox，下載前已經會提示用戶確認了。"
     },
-    "UAP-title": {
+    "UAP_title": {
         "message": "注意！下載檔案！"
     },
-    "UAP-tab": {
+    "UAP_tab": {
         "message": "分頁:"
     },
-    "UAP-want-to-download": {
+    "UAP_want_to_download": {
         "message": "請求下載:"
     },
-    "UAP-size": {
+    "UAP_size": {
         "message": "檔案大小:"
     },
-    "UAP-remember-action-for": {
+    "UAP_remember_action_for": {
         "message": "記住我的選擇:"
     },
-    "UAP-remember-web-site": {
+    "UAP_remember_web_site": {
         "message": "網站:"
     },
-    "UAP-mime-type": {
+    "UAP_mime_type": {
         "message": "檔案類型:"
     },
-    "UAP-file-ext": {
+    "UAP_file_ext": {
         "message": "擴展名:"
     },
-    "UAP-btn-allow": {
+    "UAP_btn_allow": {
         "message": "仍然允許"
     },
-    "UAP-btn-reject": {
+    "UAP_btn_reject": {
         "message": "拒絕"
     },
-    "OPT-title": {
+    "OPT_title": {
         "message":"下載前進行確認選項"
     },
-    "OPT-remembered-rules": {
+    "OPT_remembered_rules": {
         "message":"記住的下載選項"
     },
-    "OPT-web-site": {
+    "OPT_web_site": {
         "message":"網站"
     },
-    "OPT-mime-type": {
+    "OPT_mime_type": {
         "message":"檔案類型"
     },
-    "OPT-file-ext": {
+    "OPT_file_ext": {
         "message":"擴展名"
     },
-    "OPT-action": {
+    "OPT_action": {
         "message":"操作"
     },
-    "OPT-forget": {
+    "OPT_forget": {
         "message":"刪除？"
     }
 }

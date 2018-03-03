@@ -7,65 +7,65 @@
         "message": "Used to prevent unnecessary wasting of mobile network traffic.\n\nWill prompt the user to confirm before download.\nOnly Useful on Firefox Android, since other platform won't sliently accept downloads.",
         "description": "Description of the extension."
     },
-    "OI-title": {
+    "OI_title": {
         "message": "User Notice"
     },
-    "OI-fx-android": {
+    "OI_fx_android": {
         "message": "This Addon is only useful on Firefox Android!",
         "description": "Only useful on Firefox Android."
     },
-    "OI-fx-other": {
+    "OI_fx_other": {
         "message": "Since Firefox on current platform, already prompt the user to confirm before download."
     },
-    "UAP-title": {
+    "UAP_title": {
         "message": "Caution! Download file!"
     },
-    "UAP-tab": {
+    "UAP_tab": {
         "message": "Tab:"
     },
-    "UAP-want-to-download": {
+    "UAP_want_to_download": {
         "message": "Want to download:"
     },
-    "UAP-size": {
+    "UAP_size": {
         "message": "Size:"
     },
-    "UAP-remember-action-for": {
+    "UAP_remember_action_for": {
         "message": "Remember my action for:"
     },
-    "UAP-remember-web-site": {
+    "UAP_remember_web_site": {
         "message": "Web Site:"
     },
-    "UAP-mime-type": {
+    "UAP_mime_type": {
         "message": "Mime Type:"
     },
-    "UAP-file-ext": {
+    "UAP_file_ext": {
         "message": "File Ext.:"
     },
-    "UAP-btn-allow": {
+    "UAP_btn_allow": {
         "message": "Allow Anyway"
     },
-    "UAP-btn-reject": {
+    "UAP_btn_reject": {
         "message": "Reject"
     },
-    "OPT-title": {
+    "OPT_title": {
         "message":"Ask Before Download Options"
     },
-    "OPT-remembered-rules": {
+    "OPT_remembered_rules": {
         "message":"Remembered Download Rules"
     },
-    "OPT-web-site": {
+    "OPT_web_site": {
         "message":"Web Site"
     },
-    "OPT-mime-type": {
+    "OPT_mime_type": {
         "message":"Mime Type"
     },
-    "OPT-file-ext": {
+    "OPT_file_ext": {
         "message":"File Ext."
     },
-    "OPT-action": {
+    "OPT_action": {
         "message":"Action"
     },
-    "OPT-forget": {
+    "OPT_forget": {
         "message":"Delete?"
     }
 }

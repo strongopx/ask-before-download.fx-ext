@@ -7,65 +7,65 @@
         "message": "モバイルネットワークトラフィックの無駄な浪費を防ぐために使用します。\n\nダウンロードする前に確認するようユーザーに促します。\nFirefoxのAndroidでは、他のプラットフォームではダウンロードを受け入れないので便利です。",
         "description": "拡張機能の説明"
     },
-    "OI-title": {
+    "OI_title": {
         "message": "ユーザー通知"
     },
-    "OI-fx-android": {
+    "OI_fx_android": {
         "message": "このアドオンはFirefox Androidでのみ有効です！",
         "description": "Firefox Androidでのみ有効です。"
     },
-    "OI-fx-other": {
+    "OI_fx_other": {
         "message": "Firefoxは現在のプラットフォーム上にあるので、ダウンロードする前に確認するようにユーザーに促しています。"
     },
-    "UAP-title": {
+    "UAP_title": {
         "message": "注意！ダウンロードファイル！"
     },
-    "UAP-tab": {
+    "UAP_tab": {
         "message": "タブ:"
     },
-    "UAP-want-to-download": {
+    "UAP_want_to_download": {
         "message": "ダウンロードしたい:"
     },
-    "UAP-size": {
+    "UAP_size": {
         "message": "サイズ:"
     },
-    "UAP-remember-action-for": {
+    "UAP_remember_action_for": {
         "message": "自分の行動を記憶する:"
     },
-    "UAP-remember-web-site": {
+    "UAP_remember_web_site": {
         "message": "ウェブサイト:"
     },
-    "UAP-mime-type": {
+    "UAP_mime_type": {
         "message": "ファイルタイプ:"
     },
-    "UAP-file-ext": {
+    "UAP_file_ext": {
         "message": "ファイル拡張子:"
     },
-    "UAP-btn-allow": {
+    "UAP_btn_allow": {
         "message": "とにかく許可する"
     },
-    "UAP-btn-reject": {
+    "UAP_btn_reject": {
         "message": "拒否"
     },
-    "OPT-title": {
+    "OPT_title": {
         "message": "ダウンロード前に確認するオプション"
     },
-    "OPT-remembered-rules": {
+    "OPT_remembered_rules": {
         "message": "記憶されたダウンロードルール"
     },
-    "OPT-web-site": {
+    "OPT_web_site": {
         "message": "ウェブサイト"
     },
-    "OPT-mime-type": {
+    "OPT_mime_type": {
         "message": "ファイルタイプ"
     },
-    "OPT-file-ext": {
+    "OPT_file_ext": {
         "message": "ファイル拡張子"
     },
-    "OPT-action": {
+    "OPT_action": {
         "message": "アクション"
     },
-    "OPT-forget": {
+    "OPT_forget": {
         "message": "削除？"
     }
 }
