@@ -27,7 +27,7 @@ var mimeTypeBlackListText = `
 # Ask Before Download
 # !!! Need add apk to octet-stream !!!
 application/vnd.android.package-archive   apk;
-video/MP2T                           ts;
+video/mp2t                           ts;
 
 # Need to remove css html images
 

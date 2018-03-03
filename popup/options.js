@@ -43,7 +43,7 @@ function showUserRuleList() {
         for (let rule of ruleList) {
             log("rule ", rule);
             for (let r0 of ["mime-type", "file-ext", "action"]) {
-                let text = rule[r0];
+                let text = rule[r0] || '';
                 //log(text)
                 if (text && r0 === "file-ext") {
                     text = text.replace(/^\\\.|\\b$/g, '')
