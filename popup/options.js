@@ -50,6 +50,9 @@ function showUserRuleList() {
                 }
                 col = row.insertCell(colIdx++);
                 col.appendChild(doc.createTextNode(text));
+                if (text && r0 == "action") {
+                    col.className += text === "allow" ? "red-text" : "green-text";
+                }
             }
             col = row.insertCell(colIdx++);
             let r0 = doc.createElement("A");

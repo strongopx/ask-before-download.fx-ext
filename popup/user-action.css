@@ -64,7 +64,7 @@ input[type="button"] {
 #user-notice {
     border: 1px solid teal;
     max-width: 40rem;
-    min-height: 10rem;
+    min-height: 30vw;
     margin: auto;
     padding: 1rem;
     word-break: break-all;
@@ -73,8 +73,8 @@ input[type="button"] {
     border-radius: 0.5rem;
     border: 1px solid teal;
     max-width: 40rem;
-    min-height: 10rem;
-    margin: auto;
+    min-height: 30vw;
+    margin: auto auto 1.2vw auto;
     padding: 1.2vw;
     word-break: break-all;
 }
@@ -84,6 +84,7 @@ input[type="button"] {
 @media screen and (max-width: 40rem) {
     #user-confirm, #addon-options-div {
         border: unset;
+        min-height: 80vw;
         margin: 0;
         padding: 0.5vw;
     }
@@ -122,6 +123,9 @@ table#addon-options {
     border: 1px gray solid;
     border-collapse: collapse;
     margin: auto;
+}
+table#addon-options thead {
+    background-color: bisque;
 }
 table#addon-options td {
     text-align: center;
