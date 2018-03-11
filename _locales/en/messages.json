@@ -1,6 +1,6 @@
 {
     "extensionName": {
-        "message": "Ask Before Download (Prevent Auto Download)",
+        "message": "Ask Before Download (Intercept Auto Download)",
         "description": "Name of the extension."
     },
     "extensionDescription": {

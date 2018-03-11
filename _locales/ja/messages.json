@@ -1,6 +1,6 @@
 {
     "extensionName": {
-        "message": "ダウンロード前に尋ねる（自動ダウンロードの防止）",
+        "message": "ダウンロード前に尋ねる（インターセプト自動ダウンロード）",
         "description": "拡張の名前。"
     },
     "extensionDescription": {

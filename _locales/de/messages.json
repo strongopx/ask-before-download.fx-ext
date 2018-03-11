@@ -1,6 +1,6 @@
 {
     "extensionName": {
-        "message": "Vor dem Download fragen (Automatischen Download verhindern)",
+        "message": "Vor dem Herunterladen fragen (Abfangen Auto Download)",
         "description": "Name der Erweiterung."
     },
     "extensionDescription": {

@@ -1,0 +1,71 @@
+{
+    "extensionName": {
+        "message": "Vragen Voor Downloaden (onderschep automatische download)",
+        "description": "Naam van de extensie."
+    },
+    "extensionDescription": {
+        "message": "Gebruikt om onnodig verspilling van mobiel netwerkverkeer te voorkomen. \n\nWilt u de gebruiker vragen om dit te bevestigen voordat deze wordt gedownload. \nAlleen nuttig voor Firefox Android, aangezien andere platformen niet zomaar downloads aanvaarden.",
+        "description": "Beschrijving van de extensie."
+    },
+    "OI_title": {
+        "message": "gebruikerskennisgeving"
+    },
+    "OI_fx_android": {
+        "message": "Deze toevoeging is alleen nuttig op Firefox Android!",
+        "description": "Alleen nuttig op Firefox Android."
+    },
+    "OI_fx_other": {
+        "message": "Sinds Firefox op het huidige platform, vraagt ​​u de gebruiker om dit te bevestigen voordat het wordt gedownload."
+    },
+    "UAP_title": {
+        "message": "Let op! Download bestand!"
+    },
+    "UAP_tab": {
+        "message": "Tab:"
+    },
+    "UAP_want_to_download": {
+        "message": "Wilt downloaden:"
+    },
+    "UAP_size": {
+        "message": "Grootte:"
+    },
+    "UAP_remember_action_for": {
+        "message": "Onthoud mijn actie voor:"
+    },
+    "UAP_remember_web_site": {
+        "message": "Website:"
+    },
+    "UAP_mime_type": {
+        "message": "Mime Type:"
+    },
+    "UAP_file_ext": {
+        "message": "Bestand Ext .:"
+    },
+    "UAP_btn_allow": {
+        "message": "In elk geval toestaan"
+    },
+    "UAP_btn_reject": {
+        "message": "Weigeren"
+    },
+    "OPT_title": {
+        "message": "Vraag vóór downloadopties"
+    },
+    "OPT_remembered_rules": {
+        "message": "Herinnerde Downloadregels"
+    },
+    "OPT_web_site": {
+        "message": "Website"
+    },
+    "OPT_mime_type": {
+        "message": "Mime Type"
+    },
+    "OPT_file_ext": {
+        "message": "Bestand Ext."
+    },
+    "OPT_action": {
+        "message": "Actie"
+    },
+    "OPT_forget": {
+        "message": "Delete?"
+    }
+}

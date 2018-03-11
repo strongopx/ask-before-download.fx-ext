@@ -1,6 +1,6 @@
 {
     "extensionName": {
-        "message": "Preguntar antes de descargar (evitar la descarga automática)",
+        "message": "Preguntar antes de descargar (Intercepción de descarga automática)",
         "description": "Nombre de la extensión"
     },
     "extensionDescription": {

@@ -1,6 +1,6 @@
 {
     "extensionName": {
-        "message": "Demander avant le téléchargement (empêcher le téléchargement automatique)",
+        "message": "Demander avant le téléchargement (interception téléchargement automatique)",
         "description": "Nom de l'extension."
     },
     "extensionDescription": {
