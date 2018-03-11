@@ -63,7 +63,7 @@ function showUserRuleList() {
             col = row.insertCell(colIdx++);
             let r0 = doc.createElement("A");
             r0.className += "red-text";
-            r0.textContent = "⛔";
+            r0.textContent = "🗑";
             r0.href = "javascript:void(0)";
             r0.onclick = sendForgetRule;
             r0.ruleInfo = {};

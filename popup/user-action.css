@@ -5,9 +5,7 @@
 input {
     vertical-align: middle;
 }
-table td{
-    border: 1px solid black;
-}
+
 .hidden {
     display: none;
 }
@@ -110,16 +108,16 @@ input.toggle {
     display: none;
 }
 #tab-uri-toggle + label:after {
-    content: " ⏷";
+    content: " ⇩";
 }
 #file-uri-toggle + label:after {
-    content: " ⏷";
+    content: " ⇩";
 }
 #tab-uri-toggle:checked + label:after {
-    content: " ⏶";
+    content: " ⇧";
 }
 #file-uri-toggle:checked + label:after {
-    content: " ⏶";
+    content: " ⇧";
 }
 #tab-uri-toggle:checked ~ #tab-uri {
     display: block;
@@ -169,4 +167,7 @@ table#addon-options td {
 }
 #addon-options td a {
     text-decoration: none;
+}
+#addon-options td{
+    border: 1px solid black;
 }
