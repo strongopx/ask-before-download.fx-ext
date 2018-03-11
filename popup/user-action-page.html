@@ -11,17 +11,22 @@
 
 <body>
     <div id="user-confirm">
-        <span class="desc-type" data-msgid="UAP_tab">Tab:</span>
-        <div id="tab-name" class="name"></div>
-        <div id="tab-uri" class="uri"></div>
+        <span class="desc-type" data-msgid="UAP_tab">Tab:</span><br />
+        <input id="tab-uri-toggle" class="toggle" type="checkbox">
+        <label id="tab-name" class="name" for="tab-uri-toggle"></label>
+        <div id="tab-uri" class="uri" for="tab-uri-toggle"></div>
         <div class="vspace-half"></div>
+
         <span class="desc-type" data-msgid="UAP_want_to_download">Want to download:</span><br />
-        <div id="file-name" class="name-caution"></div>
+        <input id="file-uri-toggle" class="toggle" type="checkbox">
+        <label id="file-name" class="name-caution" for="file-uri-toggle"></label>
         <div id="file-uri" class="uri"></div>
         <div class="vspace-half"></div>
+
         <span class="desc-type" data-msgid="UAP_size">Size:</span><br />
         <div id="file-size"></div>
         <div class="vspace-1"></div>
+        
         <label><input type=checkbox id="remember-choice"><span data-msgid="UAP_remember_action_for">Remember my action for:</span><br /></label>
         <form id="remember-choice-div" class="hidden">
             <table>

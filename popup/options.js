@@ -29,10 +29,13 @@ function showUserRuleList() {
     //tbody.innerHTML = '';
     let rowIdx = 0;
     let row = tbody.insertRow(rowIdx++);
+    let hostIdx = 0;
     for (let hostname of Object.keys(userRuleList)) {
+        hostIdx++;
         let ruleList = userRuleList[hostname];
         let colIdx = 0;
         let col = row.insertCell(colIdx++);
+        log("hostIdx ", hostIdx, (hostIdx & 0x1));
         col.appendChild(doc.createTextNode(hostname));
         col.rowSpan = ruleList.length;
         let hostnameCol = col;
@@ -41,22 +44,26 @@ function showUserRuleList() {
         //col.append(div);
         log("\nhostname ", hostname);
         for (let rule of ruleList) {
+            if ((hostIdx & 0x1) === 0)
+                row.className += " evenHostnameRow"
             log("rule ", rule);
             for (let r0 of ["mime-type", "file-ext", "action"]) {
                 let text = rule[r0] || '';
                 //log(text)
+                col = row.insertCell(colIdx++);
                 if (text && r0 === "file-ext") {
                     text = text.replace(/^\\\.|\\b$/g, '')
                 }
-                col = row.insertCell(colIdx++);
-                col.appendChild(doc.createTextNode(text));
-                if (text && r0 == "action") {
+                if (text && r0 === "action") {
                     col.className += text === "allow" ? "red-text" : "green-text";
+                    text = text === "allow" ? "☑" : "☒";
                 }
+                col.appendChild(doc.createTextNode(text));
             }
             col = row.insertCell(colIdx++);
             let r0 = doc.createElement("A");
-            r0.textContent = "X";
+            r0.className += "red-text";
+            r0.textContent = "⛔";
             r0.href = "javascript:void(0)";
             r0.onclick = sendForgetRule;
             r0.ruleInfo = {};

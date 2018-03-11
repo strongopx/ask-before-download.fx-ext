@@ -78,16 +78,16 @@ userRuleListLoad();
 function handleRememberChoice(mem) {
     if (!mem["host-name"] || !mem["action"])
         return
-    let r0 = {};
+    let rule = {};
     let hostname = mem["host-name"];
-    r0["action"] = mem["action"];
+    rule["action"] = mem["action"];
     //if (mem["host-name"])
     //    r0["host-name"] = new RegExp(mem["host-name"].replace(".", "\\.") + "$");
-    r0["mime-type"] = mem["mime-type"];
+    rule["mime-type"] = mem["mime-type"];
     if (mem["file-ext"])
-        r0["file-ext"] = "\\."+mem["file-ext"]+"\\b";
+        rule["file-ext"] = "\\."+mem["file-ext"]+"\\b";
     //log("typeof file-ext", typeof mem["file-ext"]);
-    userRuleListAdd(hostname, r0);
+    userRuleListAdd(hostname, rule);
 }
 
 function checkUserRuleList(list, request, fileName, contentType) {

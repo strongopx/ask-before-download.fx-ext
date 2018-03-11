@@ -5,7 +5,9 @@
 input {
     vertical-align: middle;
 }
-
+table td{
+    border: 1px solid black;
+}
 .hidden {
     display: none;
 }
@@ -43,6 +45,10 @@ input {
 }
 input[type="button"] {
     font-size: large;
+}
+input.toggle {
+    display: none;
+    visibility: hidden;
 }
 .desc-type {
     font-weight: bold;
@@ -92,23 +98,47 @@ input[type="button"] {
 #user-choice {
     text-align: center;
 }
+#tab-name, #tab-uri {
+    clear: left;
+    margin-left: 2vw;
+}
+#file-name, #file-uri, #file-size {
+    clear: left;
+    margin-left: 2vw;
+}
+#tab-uri, #file-uri {
+    display: none;
+}
+#tab-uri-toggle + label:after {
+    content: " ⏷";
+}
+#file-uri-toggle + label:after {
+    content: " ⏷";
+}
+#tab-uri-toggle:checked + label:after {
+    content: " ⏶";
+}
+#file-uri-toggle:checked + label:after {
+    content: " ⏶";
+}
+#tab-uri-toggle:checked ~ #tab-uri {
+    display: block;
+}
+#file-uri-toggle:checked ~ #file-uri {
+    display: block;
+}
 #remember-choice-div {
     margin-left: 2vw;
 }
 #remember-choice-div table tr td:first-child {
     text-align: right;
     word-break: normal;
-    background-color: bisque;
+    background-color: lavender;
     border-radius: 0.2rem;
 }
 #remember-choice-div table tr td label {
+    padding: 0.2rem 0.1vw;
     display: block;
-}
-#tab-name, #tab-uri {
-    margin-left: 2vw;
-}
-#file-name, #file-uri, #file-size {
-    margin-left: 2vw;
 }
 #btn-allow {
     padding: 0.5rem;
@@ -119,18 +149,24 @@ input[type="button"] {
     margin-left: 2vw;
     border-radius: 0.2rem;
 }
+.evenHostnameRow {
+    background-color: lavender;
+}
 table#addon-options {
     border: 1px gray solid;
     border-collapse: collapse;
     margin: auto;
 }
 table#addon-options thead {
-    background-color: bisque;
+    background-color: yellowgreen;
 }
 table#addon-options td {
     text-align: center;
-    padding: 0.1vw 0.6vw;
+    padding: 0.3vw 0.6vw;
 }
 #addon-options-div h3 {
     text-align: center;
+}
+#addon-options td a {
+    text-decoration: none;
 }
