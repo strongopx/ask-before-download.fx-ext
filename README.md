@@ -1,4 +1,4 @@
-# Ask Before Download (Prevent Auto Download)
+# Ask Before Download (Intercept Auto Download)
 Used to prevent unnecessary wasting of mobile network traffic.
 
 Will prompt the user to confirm before download.
