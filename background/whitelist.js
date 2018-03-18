@@ -48,6 +48,7 @@ image/x-icon cur ico;
 application/font-woff                 woff;
 application/font-woff2                woff2;
 application/octet-stream              woff2;
+application/x-octet-stream            woff2;
 application/vnd.ms-fontobject         eot;
 
 # Browsers usually ignore the font media types and simply sniff

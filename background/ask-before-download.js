@@ -29,20 +29,6 @@ log("mimeTypeWhiteList ", mimeTypeWhiteList);
 var mimeTypeBlackList = mimeTypeTextToList(mimeTypeBlackListText);
 log("mimeTypeBlackList ", mimeTypeBlackList);
 
-function procConentType(type) {
-    let r0 = type;
-    if (/;|\s/.test(r0)) {
-        r0 = r0.split(/;|\s/);
-        r0 = r0[0];
-        //log("procConentType: ", type, "=>", r0);
-    }
-    return r0;
-}
-
-function strieq(sa, sb) {
-    return sa.toLowerCase() === sb.toLowerCase();
-}
-
 function checkBlackList(blackList, request, type) {
     let url = request.url;
     let exts = blackList[type];
@@ -51,7 +37,7 @@ function checkBlackList(blackList, request, type) {
         log("type ", type, "exts ", exts);
     }
     */
-    if (exts && !strieq(type, MIME_STREAM))
+    if (exts && !isMimeOctetStream(type))
         return true;
     if (!exts)
         return;
@@ -66,11 +52,24 @@ function checkBlackList(blackList, request, type) {
 
 }
 
-function inMimeTypeWhiteList(whiteList, type) {
-    if (type in whiteList) {
+function inMimeTypeWhiteList(whiteList, type, fileName) {
+    let exts = whiteList[type];
+    //log("exts ", exts);
+    if (!exts)
+        return false;
+    if (!isMimeOctetStream(type)) {
         log("ContentType ", type, " in white list");
         return true;
     }
+
+    /* mime octet-stream, check ext */
+    for (let ext of exts) {
+        if (ext.test(fileName)) {
+            log("ContentType ", type, " with ext ", ext.source, " in white list");
+            return true;
+        }
+    }
+    // log("ContentType ", type, " with name ", fileName, " NOT in white list");
 }
 
 userRuleListLoad();
@@ -94,6 +93,7 @@ function checkUserRuleList(list, request, fileName, contentType) {
     let originUrl = new URL(request.originUrl || request.url);
     let hostname = originUrl.hostname;
     let wildHostname = wildSubHostname(hostname);
+    fileName = fileName || splitURL(request.url)[1];
 
     let rs = [];
     rs = rs.concat(list[hostname]);
@@ -107,7 +107,7 @@ function checkUserRuleList(list, request, fileName, contentType) {
             continue;
         if (r["mime-type"] && !strieq(r["mime-type"], contentType))
             continue;
-        if (r["file-ext"] && !(new RegExp(r["file-ext"], 'i')).test(fileName || splitURL(request.url)[1]))
+        if (r["file-ext"] && !(new RegExp(r["file-ext"], 'i')).test(fileName))
             continue;
         log("userRuleList match ", r);
         return { cancel: r["action"] !== "allow" };
@@ -203,7 +203,7 @@ function getContentInfo(request) {
 }
 
 function isLargeOctetStream(contentType, fileSize){
-    if (!strieq(contentType, MIME_STREAM))
+    if (!isMimeOctetStream(contentType))
         return false;
     
     fileSize = parseInt(fileSize);
@@ -239,7 +239,9 @@ function filterRequest(request) {
     } catch (e) {
     }
 
-    if (respHdr.contentIsAttachment && !inMimeTypeWhiteList(mimeTypeWhiteList, contentType)
+    if (respHdr.contentIsAttachment
+        && !inMimeTypeWhiteList(mimeTypeWhiteList, contentType, 
+                    respHdr.fileName || splitURL(request.url)[1])
         || checkBlackList(mimeTypeBlackList, request, contentType)
         || isLargeOctetStream(contentType, respHdr.contentLength)) {
         log("\n\n");

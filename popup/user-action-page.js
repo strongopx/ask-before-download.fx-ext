@@ -32,7 +32,7 @@ function handleMessage(request, sender, sendResponse) {
         let ext = getFileExt(request.fileName || file_name);
         doc.querySelector("#file-ext").textContent = ext;
         doc.querySelector("#file-ext-check").value = ext;
-        doc.querySelector("#file-ext-check").checked = request.mimeType === MIME_STREAM;
+        doc.querySelector("#file-ext-check").checked = isMimeOctetStream(request.mimeType);
         if (!ext) {
             doc.querySelector("#file-ext-div").style.display = "none";
         }

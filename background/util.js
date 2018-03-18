@@ -31,13 +31,35 @@ function splitURL(url) {
     return [schem_auth_dir, file_name, param];
 }
 
+function procConentType(type) {
+    let r0 = type;
+    if (/;|\s/.test(r0)) {
+        r0 = r0.split(/;|\s/);
+        r0 = r0[0];
+        //log("procConentType: ", type, "=>", r0);
+    }
+    return r0;
+}
+
+function strieq(sa, sb) {
+    return sa.toLowerCase() === sb.toLowerCase();
+}
+
+
 const SIZE_STEP = 1<<10;
 const SIZE_GB = 1<<30;
 const SIZE_MB = 1<<20;
 const SIZE_KB = 1<<10;
 
-const MIME_STREAM = "application/octet-stream";
+const MIME_OCTET_STREAM = [ "application/octet-stream", "application/x-octet-stream" ];
 const SIZE_LARGE_STREAM = 10*SIZE_MB;
+
+function isMimeOctetStream(type) {
+    for (let e of MIME_OCTET_STREAM) {
+        if (strieq(e, type))
+            return true;
+    }
+}
 
 function humanReadableSize(size) {
     size = parseInt(size);

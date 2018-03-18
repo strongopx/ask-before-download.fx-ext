@@ -66,6 +66,7 @@ application/vnd.openxmlformats-officedocument.presentationml.presentation  pptx;
 application/java-archive              ear jar war;
 application/mac-binhex40              hqx;
 application/octet-stream              bin deb dll dmg exe img iso msi msm msp safariextz apk;
+application/x-octet-stream            bin deb dll dmg exe img iso msi msm msp safariextz apk;
 application/pdf                       pdf;
 application/postscript                ai eps ps;
 application/rtf                       rtf;
