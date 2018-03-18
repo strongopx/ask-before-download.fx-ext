@@ -21,7 +21,7 @@ function isRegexEqual(ra, rb) {
 function isRuleEqual(ra, rb) {
     if (ra["action"] !== rb["action"] ||
         ra["mime-type"] !== rb["mime-type"] ||
-        !isRegexEqual(ra["file-ext"], rb["file-ext"]))
+        ra["file-ext"] !== rb["file-ext"])
         return false;
     return true;
 }
@@ -29,11 +29,12 @@ function isRuleEqual(ra, rb) {
 function isRuleActionDiff(ra, rb) {
     return ra["action"] !== rb["action"] &&
         ra["mime-type"] === rb["mime-type"] &&
-        isRegexEqual(ra["file-ext"], rb["file-ext"]);
+        ra["file-ext"] ===  rb["file-ext"];
 }
 
 function userHostRulesAdd(hostRules, rule) {
     for (let tmpRule of hostRules) {
+        //log("tmpRule ", tmpRule, rule);
         if (isRuleEqual(tmpRule, rule)) {
             return false;
         }

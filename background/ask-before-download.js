@@ -107,10 +107,10 @@ function checkUserRuleList(list, request, fileName, contentType) {
             continue;
         if (r["mime-type"] && !strieq(r["mime-type"], contentType))
             continue;
-        if (r["file-ext"] && !(new RegExp(r["file-ext"], 'i')).test(fileName || request.url))
+        if (r["file-ext"] && !(new RegExp(r["file-ext"], 'i')).test(fileName || splitURL(request.url)[1]))
             continue;
         log("userRuleList match ", r);
-        return { cancel: r["action"] === "reject" };
+        return { cancel: r["action"] !== "allow" };
     }
 }
 
